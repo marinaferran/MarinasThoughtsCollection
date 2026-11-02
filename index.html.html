@@ -75,7 +75,12 @@ h1{
   text-align:center;margin-bottom:14px;
 }
 .index-tabs{
-  display:flex;gap:18px;justify-content:center;flex-wrap:wrap;
+  display:flex;gap:18px;justify-content:center;flex-wrap:nowrap;
+}
+.index-tabs .tab{flex:1 1 0;min-width:0;max-width:none}
+@media (max-width:760px){
+  .index-tabs{flex-wrap:wrap}
+  .index-tabs .tab{flex-basis:100%}
 }
 .tab{
   display:flex;flex-direction:column;gap:2px;
@@ -327,6 +332,12 @@ footer{
       <span class="tab-cert">CTO MIT Certificate</span>
       <span class="tab-count">5 thoughts</span>
     </a>
+    <a class="tab" href="#series-3">
+      <span class="tab-num">Series 03</span>
+      <span class="tab-name">Management of Technology: Strategy &amp; Portfolio Analysis</span>
+      <span class="tab-cert">CTO MIT Certificate</span>
+      <span class="tab-count">4 thoughts</span>
+    </a>
   </div>
 </nav>
 
@@ -344,7 +355,7 @@ footer{
 
 <footer>
   <p class="footer-meta">MARINA’S THOUGHTS COLLECTION</p>
-  <a class="linkedin-link" href="LINKEDIN_URL_HERE" target="_blank" rel="noopener" aria-label="Connect with Marina on LinkedIn">
+  <a class="linkedin-link" href="https://www.linkedin.com/in/marinaferran/" target="_blank" rel="noopener" aria-label="Connect with Marina on LinkedIn">
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0z"/></svg>
     <span>Let’s connect</span>
   </a>
@@ -598,6 +609,118 @@ const SERIES = [
     </ul>
     <p>The same way we have a responsibility to create technology that helps people, we have a responsibility to confirm this continues to happen as the technology evolves &mdash; and the second-order dependencies appear.</p>
     <p class="takeaway">Are you ready to evolve when the second-order effects show up?</p>`
+  }
+]}
+,
+
+{
+  tag:"Series 03",
+  title:"Management of Technology: Strategy & Portfolio Analysis",
+  sub:"CTO Certificate — MIT Professional Education · with Prof. Olivier “Oli” de Weck",
+  intro:"Four thoughts on choosing what to build: connecting technology to customer value, comparing R&D projects, balancing the portfolio, and setting goals that are bold but possible.",
+  credit:'Framework credit: <a href="https://www.linkedin.com/in/olivierdeweck/" target="_blank" rel="noopener">Olivier “Oli” de Weck</a>, MIT Professional Education.',
+  posts:[
+  {
+    num:"#1", hook:'Did your customer <span class="hl">notice</span>?', title:"Product FOMs vs. Technology FOMs",
+    teaser:"Your technology got 30% better. Did your customer even notice?",
+    body:`
+    <p class="beat">Your technology got 30% better.</p>
+    <p>Did your customer even notice?</p>
+    <p>Technology progress is useless if it’s not well connected to customer value.</p>
+    <p>When defining roadmaps and technology portfolios, it is easy to lose sight, though. We start focusing too much on the tokens, the watts or the megapixels. And we even stop watching if another technical approach could change the rules of the game.</p>
+    <p>I really liked the framework that Oli de Weck proposes to clearly separate and quantify two types of figures of merit (FOMs):</p>
+    <ul class="dlist">
+      <li><strong>Product FOMs</strong> &mdash; what customers really care about and how they choose you over your competitor.</li>
+      <li><strong>Technology FOMs</strong> &mdash; how each technology delivers its part of the job.</li>
+    </ul>
+    <p>It’s not just the fact that you can articulate both.</p>
+    <p><strong>The magic appears when the relationship between the two types of FOMs is understood and clearly quantified.</strong></p>
+    <p>That allows us to understand the magnitude of the ripple effect of technological change. And clearly define what the impact on the Product FOM will be when investing in a 30% technology advance.</p>
+    <p>As simple as this idea is, it has proven to be extremely powerful for me. It has helped me:</p>
+    <ul class="dlist">
+      <li>See technology progress through the lens of value created</li>
+      <li>Challenge what the problem really is</li>
+      <li>Check if a proposed change is really impactful</li>
+      <li>Look beyond the current architecture for other technologies that could improve the product</li>
+    </ul>
+    <p class="takeaway">If you have not done the exercise already, invest the time in understanding your product FOMs, your technology FOMs, and how they are connected.</p>`
+  },
+  {
+    num:"#2", hook:'The hard part is <span class="hl">choosing</span>.', title:"The R&D Project Catalogue",
+    teaser:"Too many R&D ideas? That’s the easy part.",
+    body:`
+    <p class="beat">Too many R&amp;D ideas?</p>
+    <p class="beat">That’s the easy part.</p>
+    <p>The hard part is choosing.</p>
+    <p>Agile works well when you can try, learn and adjust in weeks. But complex technology doesn’t move that fast. It needs big investment and long-term commitment before you see any results.</p>
+    <p class="beat">That’s why roadmaps matter.</p>
+    <p>Progress needs to be intentional.</p>
+    <p class="beat">Comparing R&amp;D projects is tricky, though.</p>
+    <p class="beat">One promises speed. Another, cost. Another, reliability.</p>
+    <p>You’re rarely comparing apples to apples.</p>
+    <p>Oli de Weck proposes a simple fix: <strong>build a catalogue of R&amp;D projects.</strong> For each one, define:</p>
+    <ul class="dlist">
+      <li>A name (make it fun!)</li>
+      <li>One quantified goal: a figure of merit to improve</li>
+      <li>The investment required</li>
+      <li>Schedule and resources</li>
+      <li>Quantified risk: likelihood and impact in dollars (easy to miss!)</li>
+    </ul>
+    <p>With all that information you will be able to see what is on the table. Tools like NPV or ROI show each project’s value over time, and what you give up by choosing it. That allows comparing apples to apples.</p>
+    <p>With that, the only challenge left is creating alignment and choosing.</p>
+    <p class="takeaway">Good luck!</p>`
+  },
+  {
+    num:"#3", hook:'Is your roadmap too <span class="hl">safe</span>?', title:"A Balanced Portfolio",
+    teaser:"The easiest roadmap is a linear one. It’s also how you get disrupted.",
+    body:`
+    <p class="beat">The easiest roadmap is a linear one.</p>
+    <p class="beat">Same technology. A bit faster. A bit cheaper.</p>
+    <p class="beat">Fix only what you need.</p>
+    <p class="beat">It feels comfortable.</p>
+    <p><strong>It’s also how you get disrupted.</strong></p>
+    <p>At MIT, Oli de Weck encouraged us to look beyond it. Think about the future and your next moves. Look for the new technologies you will need. Expand your sources:</p>
+    <ul class="dlist">
+      <li>Startups and universities</li>
+      <li>Lead customers</li>
+      <li>Other industries</li>
+    </ul>
+    <p>Then create a balanced portfolio with projects of different maturity:</p>
+    <ul class="dlist">
+      <li><strong>Mature</strong> &mdash; pays the bills</li>
+      <li><strong>Mid-horizon</strong> &mdash; your next wave</li>
+      <li><strong>Blue sky</strong> &mdash; your future disruptions</li>
+    </ul>
+    <p>A typical split: <strong>70% &ndash; 20% &ndash; 10%</strong>.</p>
+    <p>I’ve had the pleasure of working on R&amp;D projects at different maturity levels. And I’ve learned that each one needs a different environment to succeed.</p>
+    <p class="takeaway">Treat each one on its own terms.</p>`
+  },
+  {
+    num:"#4", hook:'Bold or <span class="hl">impossible</span>?', title:"Progress Rate as a Reality Check",
+    teaser:"Every innovation project starts with a number. How do you know if it’s realistic?",
+    body:`
+    <p class="beat">Every innovation project starts with a number.</p>
+    <p>2x faster. 50% cheaper. 10x the resolution.</p>
+    <p>But how do you know if that number is bold or impossible, when you are precisely trying to do something new?</p>
+    <p>That is one of the best tricks I learned from the course. Moore’s Law gives us a clue. <strong>Technologies improve exponentially, at a fairly constant rate.</strong></p>
+    <p>Each technology has its own rhythm, though:</p>
+    <ul class="dlist">
+      <li><strong>Physical technologies</strong> &mdash; ~5% a year</li>
+      <li><strong>Digital technologies</strong> &mdash; easily 30&ndash;50%</li>
+    </ul>
+    <p class="beat">This pattern makes sense.</p>
+    <p class="beat">Complex, intertwined systems move slower.</p>
+    <p class="beat">Fast iteration cycles move faster.</p>
+    <p>Anyone who has built hardware has felt this.</p>
+    <p>This progress rate becomes your reality check. Follow this process:</p>
+    <ul class="dlist">
+      <li>Find the past annual progress rate of your metric.</li>
+      <li>Compare it with the leap you are proposing.</li>
+      <li>If the gap is big, ask: what changes this time?</li>
+    </ul>
+    <p class="beat">Far below the curve, the goal is timid.</p>
+    <p>Far above it, you’ll miss, unless you change the conditions for innovation.</p>
+    <p class="takeaway">The progress rate is your new tool for setting bold goals.</p>`
   }
 ]}
 ];
