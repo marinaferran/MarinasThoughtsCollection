@@ -1,1 +1,1 @@
-This is a page containing Maria's Thougths Collection
+This is a page containing Marina's Thougths Collection
