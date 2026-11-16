@@ -13,7 +13,7 @@
 <link rel="alternate" hreflang="x-default" href="https://marinaferran.github.io/MarinasThoughtsCollection/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Inter:ital,wght@0,400;0,600;1,400&family=Montserrat:ital,wght@0,400;0,500;0,600;1,400;1,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
 :root{
   --cream:#F7F3EF;
@@ -22,16 +22,29 @@
   --ink:#3A3A3A;
   --teal:#2D8783;
   --teal-light:#4FBBB5;
-  --gold:#DAA520;
-  --gold-ink:#DAA520;
+  --gold:#DAA520;              /* sampled from the butterfly-bulb mark */
+  --gold-soft:rgba(218,165,32,.38);
+  --gold-tint:rgba(218,165,32,.10);
   --line:rgba(74,74,74,.14);
-  --rule:rgba(79,187,181,.28);
+  --rule:rgba(79,187,181,.17);
   --serif:'Inter','Segoe UI',sans-serif;
-  --sans:'Montserrat','Segoe UI',sans-serif;
+  --sans:'Inter','Segoe UI',sans-serif;
   --hand:'Caveat',cursive;
-  --mono:'Montserrat','Segoe UI',sans-serif;
+  --mono:'Inter','Segoe UI',sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
+
+/* ---- one label style for every small caps line ---- */
+.lang,.eyebrow,.index-label,.tab-num,.series-tag,.card-num,.card-read,
+.page-close,.page-series,.page-nav small,.footer-meta,.linkedin-link{
+  font-family:var(--sans);font-weight:600;font-size:.72rem;
+  letter-spacing:.16em;text-transform:uppercase;line-height:1.3;
+}
+/* the gold mark that sits before a label */
+.card-num,.page-series{display:flex;align-items:center;gap:10px}
+.card-num::before,.page-series::before{
+  content:"";flex:0 0 auto;width:16px;height:2px;border-radius:2px;background:var(--gold);
+}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -39,6 +52,13 @@ html{scroll-behavior:smooth}
 }
 body{
   background:var(--cream);
+  /* engineer's graph paper: fine 24px grid, stronger line every 5 squares */
+  background-image:
+    linear-gradient(rgba(45,135,131,.10) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(45,135,131,.10) 1px,transparent 1px),
+    linear-gradient(rgba(45,135,131,.045) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(45,135,131,.045) 1px,transparent 1px);
+  background-size:120px 120px,120px 120px,24px 24px,24px 24px;
   color:var(--charcoal);
   font-family:var(--serif);
   line-height:1.65;
@@ -51,7 +71,6 @@ body{
   position:absolute;top:0;left:0;right:0;z-index:5;
   max-width:1060px;margin:0 auto;padding:22px 28px;
   display:flex;justify-content:flex-end;gap:16px;
-  font-family:var(--mono);font-weight:500;font-size:.7rem;letter-spacing:.18em;
 }
 .lang a{color:var(--charcoal);opacity:.5;text-decoration:none;transition:opacity .18s ease,color .18s ease}
 .lang a:hover,.lang a:focus-visible{opacity:1;color:var(--teal)}
@@ -66,8 +85,7 @@ header{
 }
 .mark{width:76px;height:auto;margin:0 auto 30px;display:block}
 .eyebrow{
-  font-family:var(--mono);font-weight:600;font-size:.72rem;letter-spacing:.22em;
-  text-transform:uppercase;color:var(--gold-ink);
+  color:var(--ink);
 }
 h1{
   font-family:var(--hand);font-weight:700;
@@ -78,21 +96,24 @@ h1{
 .underline-swash{display:block;width:min(320px,60%);margin:4px auto 30px}
 .tagline{
   color:var(--charcoal);
-  font-size:clamp(1rem,2vw,1.1rem);line-height:2;
+  font-size:clamp(1rem,2vw,1.1rem);line-height:1.7;
   max-width:660px;margin:0 auto;
 }
 .tagline em{color:var(--teal);font-style:normal}
-.tagline .gold-em{color:var(--gold-ink);font-style:normal}
+.tagline .gold-em{color:var(--ink);font-weight:600;font-style:normal;
+  background:linear-gradient(transparent 62%,var(--gold-soft) 62% 92%,transparent 92%);padding:0 2px}
 
 /* ---------- index nav ---------- */
 .index-nav{max-width:1060px;margin:20px auto 0;padding:0 28px}
 .index-label{
-  font-family:var(--mono);font-weight:500;font-size:.7rem;letter-spacing:.2em;
-  text-transform:uppercase;color:var(--charcoal);opacity:.7;
+  color:var(--charcoal);opacity:.7;
   text-align:center;margin-bottom:14px;
 }
 .index-tabs{
-  display:flex;gap:18px;justify-content:center;flex-wrap:nowrap;
+  display:flex;flex-wrap:nowrap;
+  background:var(--paper);border:1px solid var(--line);border-radius:14px;
+  box-shadow:0 1px 2px rgba(74,74,74,.05),0 10px 30px -18px rgba(74,74,74,.25);
+  overflow:hidden;
 }
 .index-tabs .tab{flex:1 1 0;min-width:0;max-width:none}
 @media (max-width:760px){
@@ -100,51 +121,45 @@ h1{
   .index-tabs .tab{flex-basis:100%}
 }
 .tab{
-  display:flex;flex-direction:column;gap:2px;
-  background:var(--paper);
-  border:1px solid var(--line);
-  border-left:4px solid var(--teal);
-  border-radius:4px 10px 10px 4px;
-  padding:14px 22px 12px 18px;
+  --accent:var(--gold);
+  position:relative;display:flex;flex-direction:column;gap:10px;
+  padding:26px 26px 22px;
   text-decoration:none;color:var(--charcoal);
-  min-width:230px;max-width:340px;
-  box-shadow:0 1px 3px rgba(74,74,74,.08);
-  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+  transition:background .18s ease;
 }
-.tab:nth-child(2){border-left-color:var(--gold)}
-.tab:hover,.tab:focus-visible{
-  transform:translateY(-3px);
-  box-shadow:0 8px 18px rgba(74,74,74,.13);
+.tab + .tab{border-left:1px solid var(--line)}
+.tab::before{
+  content:"";position:absolute;top:0;left:26px;width:36px;height:3px;
+  background:var(--accent);border-radius:0 0 3px 3px;
+  transition:width .22s ease;
 }
-.tab:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+.tab:hover,.tab:focus-visible{background:var(--gold-tint)}
+.tab:hover::before,.tab:focus-visible::before{width:calc(100% - 52px)}
+.tab:focus-visible{outline:2px solid var(--teal);outline-offset:-3px}
 .tab-num{
-  font-family:var(--mono);font-weight:500;font-size:.68rem;letter-spacing:.18em;
-  text-transform:uppercase;color:var(--teal);
+  color:var(--charcoal);font-variant-numeric:tabular-nums;
 }
-.tab:nth-child(2) .tab-num{color:var(--gold-ink)}
 .tab-name{
-  font-family:var(--sans);font-weight:600;font-size:1.02rem;
-  line-height:1.28;color:var(--ink);
+  font-family:var(--sans);font-weight:600;font-size:1.05rem;letter-spacing:-.01em;
+  line-height:1.3;color:var(--ink);flex:1;
 }
-.tab-cert{
-  font-family:var(--mono);font-weight:500;font-size:.65rem;letter-spacing:.12em;
-  text-transform:uppercase;color:var(--charcoal);opacity:.75;margin-top:2px;
+.tab-meta{
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:.82rem;color:var(--charcoal);opacity:.8;margin-top:4px;
 }
-.tab-count{
-  font-size:.8rem;opacity:.75;
+.tab-go{color:var(--gold);font-size:1rem;transition:transform .18s ease}
+.tab:hover .tab-go,.tab:focus-visible .tab-go{transform:translateY(3px)}
+@media (max-width:760px){
+  .tab + .tab{border-left:0;border-top:1px solid var(--line)}
 }
 .series{scroll-margin-top:24px}
 
 /* ---------- series section ---------- */
 main{max-width:1060px;margin:0 auto;padding:0 28px 40px}
 .series{
-  margin-top:56px;
-  background:var(--paper);
-  border:1px solid var(--line);
-  border-top:5px solid var(--teal);
-  border-radius:10px;
-  padding:34px clamp(18px,4vw,40px) 44px;
-  box-shadow:0 2px 10px rgba(74,74,74,.05);
+  margin-top:72px;
+  border-top:4px solid var(--gold);
+  padding-top:26px;
 }
 .series-head{
   display:flex;align-items:center;gap:16px;flex-wrap:wrap;
@@ -152,16 +167,15 @@ main{max-width:1060px;margin:0 auto;padding:0 28px 40px}
   padding-bottom:14px;margin-bottom:8px;
 }
 .series-tag{
-  font-family:var(--mono);font-weight:500;font-size:.7rem;letter-spacing:.2em;
-  text-transform:uppercase;color:var(--teal);
-  border:1px solid var(--teal);border-radius:2px;
+  color:var(--ink);background:var(--gold-tint);
+  border:1px solid var(--gold);border-radius:3px;
   padding:5px 10px 4px;white-space:nowrap;line-height:1;
   display:inline-flex;align-items:center;
 }
 .series-title{font-family:var(--sans);font-size:clamp(1.25rem,2.8vw,1.55rem);font-weight:600;color:var(--ink);line-height:1.3}
 .series-sub{
-  font-family:var(--mono);font-weight:500;font-size:.75rem;color:var(--charcoal);
-  opacity:.75;width:100%;
+  font-size:.85rem;color:var(--charcoal);
+  opacity:.8;width:100%;
 }
 .series-intro{
   margin:16px 0 28px;color:var(--charcoal);line-height:1.7;
@@ -175,9 +189,9 @@ main{max-width:1060px;margin:0 auto;padding:0 28px 40px}
 .card{
   position:relative;
   background:
-    repeating-linear-gradient(to bottom,transparent 0 27px,var(--rule) 27px 28px),
+    repeating-linear-gradient(to bottom,transparent 0 31px,var(--rule) 31px 32px),
     var(--paper);
-  background-position:0 18px;
+  background-position:0 13px;
   border:1px solid var(--line);
   border-radius:6px;
   padding:26px 24px 22px;
@@ -193,12 +207,11 @@ main{max-width:1060px;margin:0 auto;padding:0 28px 40px}
 }
 .card:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
 .card-num{
-  font-family:var(--mono);font-weight:600;font-size:.72rem;letter-spacing:.14em;
-  color:var(--gold-ink);margin-bottom:8px;
+  color:var(--charcoal);margin-bottom:10px;
 }
 .card-hook{
   font-family:var(--hand);font-weight:600;
-  font-size:1.85rem;line-height:1.12;color:var(--ink);
+  font-size:1.85rem;line-height:32px;color:var(--ink);
   margin-bottom:10px;
 }
 .card-hook .hl{
@@ -210,8 +223,7 @@ main{max-width:1060px;margin:0 auto;padding:0 28px 40px}
 }
 .card-teaser{font-size:.86rem;line-height:1.55;opacity:.85;flex:1}
 .card-read{
-  font-family:var(--mono);font-weight:500;font-size:.7rem;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--teal);margin-top:16px;
+  color:var(--teal);margin-top:16px;
 }
 .card-read::after{content:" →"}
 
@@ -226,7 +238,7 @@ main{max-width:1060px;margin:0 auto;padding:0 28px 40px}
 .page{
   position:relative;
   background:
-    repeating-linear-gradient(to bottom,transparent 0 31px,rgba(79,187,181,.16) 31px 32px),
+    repeating-linear-gradient(to bottom,transparent 0 27px,rgba(79,187,181,.13) 27px 28px),
     var(--paper);
   background-position:0 22px;
   width:min(720px,100%);
@@ -236,17 +248,15 @@ main{max-width:1060px;margin:0 auto;padding:0 28px 40px}
   animation:rise .28s ease;
 }
 @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.page-actions{position:absolute;top:16px;right:16px;display:flex;gap:8px}
 .page-close{
-  position:absolute;top:16px;right:16px;
-  font-family:var(--mono);font-weight:500;font-size:.8rem;letter-spacing:.1em;
   background:none;border:1px solid var(--line);border-radius:4px;
   color:var(--charcoal);padding:6px 12px;cursor:pointer;
 }
 .page-close:hover{border-color:var(--teal);color:var(--teal)}
 .page-close:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
 .page-series{
-  font-family:var(--mono);font-weight:600;font-size:.68rem;letter-spacing:.18em;
-  text-transform:uppercase;color:var(--gold-ink);margin-bottom:6px;
+  color:var(--charcoal);margin-bottom:10px;
 }
 .page-hook{
   font-family:var(--hand);font-weight:700;
@@ -261,14 +271,14 @@ main{max-width:1060px;margin:0 auto;padding:0 28px 40px}
   font-family:var(--sans);font-size:.98rem;font-weight:600;color:var(--teal);
   margin-bottom:26px;
 }
-.page-body{font-size:15.5px;line-height:2;}
+.page-body{font-size:16px;line-height:1.75;}
 .page-body p{margin-bottom:18px}
 .page-body .beat{margin-bottom:4px}
 .page-body strong{color:var(--ink)}
 .page-body em{color:var(--teal)}
 .qlist,.dlist{list-style:none;margin:0 0 18px}
 .qlist li,.dlist li{padding-left:26px;position:relative;margin-bottom:4px}
-.qlist li::before{content:"?";position:absolute;left:2px;color:var(--gold-ink);font-family:var(--hand);font-weight:700;font-size:1.25rem;line-height:1.4}
+.qlist li::before{content:"?";position:absolute;left:2px;color:var(--gold);font-family:var(--hand);font-weight:700;font-size:1.25rem;line-height:1.4}
 .dlist li::before{content:"";position:absolute;left:6px;top:.75em;width:7px;height:7px;border-radius:50%;background:var(--teal-light)}
 .dlist.minus li::before{background:var(--charcoal);opacity:.5}
 .page-fig{
@@ -280,8 +290,7 @@ main{max-width:1060px;margin:0 auto;padding:0 28px 40px}
   box-shadow:0 2px 8px rgba(74,74,74,.08);
 }
 .page-fig figcaption{
-  font-family:var(--mono);font-weight:500;font-size:.7rem;letter-spacing:.1em;
-  color:var(--charcoal);opacity:.7;margin-top:8px;
+  font-size:.8rem;color:var(--charcoal);opacity:.75;margin-top:8px;
 }
 .takeaway{
   font-family:var(--serif);font-weight:bold;font-style:italic;font-size:1.15rem;
@@ -290,20 +299,35 @@ main{max-width:1060px;margin:0 auto;padding:0 28px 40px}
   border-left:3px solid var(--teal-light);
 }
 .credit{
-  font-family:var(--mono);font-weight:500;font-size:.72rem;opacity:.7;margin-top:24px;
+  font-size:.8rem;opacity:.75;margin-top:24px;
   border-top:1px dashed var(--line);padding-top:14px;
 }
 .credit a{color:var(--teal)}
+
+.page-nav{
+  display:flex;justify-content:space-between;gap:16px;
+  margin-top:22px;padding-top:18px;border-top:1px solid var(--line);
+}
+.page-nav button{
+  flex:1;max-width:48%;background:none;border:0;padding:6px 0;cursor:pointer;
+  text-align:left;font-family:var(--sans);color:var(--charcoal);
+}
+.page-nav .next{text-align:right;margin-left:auto}
+.page-nav small{
+  display:block;color:var(--teal);margin-bottom:3px;
+}
+.page-nav b{font-weight:600;font-size:.95rem;line-height:1.3;color:var(--ink);transition:color .18s ease}
+.page-nav button:hover b{color:var(--teal)}
+.page-nav button:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:4px}
 
 /* ---------- footer ---------- */
 footer{
   border-top:1px solid var(--line);
   margin-top:80px;padding:48px 28px 64px;text-align:center;
 }
-.footer-meta{font-family:var(--mono);font-weight:500;font-size:.72rem;letter-spacing:.14em;opacity:.7;margin-bottom:18px}
+.footer-meta{opacity:.7;margin-bottom:18px}
 .linkedin-link{
   display:inline-flex;align-items:center;gap:9px;
-  font-family:var(--mono);font-weight:500;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;
   color:var(--charcoal);text-decoration:none;
   border:1px solid var(--line);border-radius:999px;
   padding:9px 18px;
@@ -331,31 +355,28 @@ footer{
   <p class="eyebrow">Pensament en brut · compartit per construir-hi</p>
   <h1>Col·lecció de pensaments de la Marina</h1>
   <svg class="underline-swash" viewBox="0 0 320 14" fill="none" aria-hidden="true">
-    <path d="M6 9 C 80 3, 160 12, 314 6" stroke="#4FBBB5" stroke-width="5" stroke-linecap="round" opacity=".8"/>
+    <path d="M6 9 C 80 3, 160 12, 314 6" stroke="#DAA520" stroke-width="5" stroke-linecap="round" opacity=".85"/>
   </svg>
   <p class="tagline">Pensaments inspirats per<br><span class="gold-em">nous aprenentatges</span> + <span class="gold-em">la meva experiència creant nova tecnologia</span>.<br>Una idea per pàgina, organitzada per sèries, directament de la llibreta.</p>
 </header>
 
 <nav class="index-nav" aria-label="Salta a una sèrie">
-  <p class="index-label">En aquesta col·lecció</p>
+  <p class="index-label">En aquesta col·lecció · Certificat CTO MIT</p>
   <div class="index-tabs">
-    <a class="tab" href="#series-1">
-      <span class="tab-num">Sèrie 01</span>
+    <a class="tab" href="#series-1" aria-label="Sèrie 01: Lideratge innovador: cultivar una cultura d’impacte, 6 pensaments">
+      <span class="tab-num" aria-hidden="true">01</span>
       <span class="tab-name">Lideratge innovador: cultivar una cultura d’impacte</span>
-      <span class="tab-cert">Certificat CTO MIT</span>
-      <span class="tab-count">6 pensaments</span>
+      <span class="tab-meta"><span>6 pensaments</span><span class="tab-go" aria-hidden="true">↓</span></span>
     </a>
-    <a class="tab" href="#series-2">
-      <span class="tab-num">Sèrie 02</span>
+    <a class="tab" href="#series-2" aria-label="Sèrie 02: Gestió de la tecnologia: fulls de ruta i desenvolupament, 5 pensaments">
+      <span class="tab-num" aria-hidden="true">02</span>
       <span class="tab-name">Gestió de la tecnologia: fulls de ruta i desenvolupament</span>
-      <span class="tab-cert">Certificat CTO MIT</span>
-      <span class="tab-count">5 pensaments</span>
+      <span class="tab-meta"><span>5 pensaments</span><span class="tab-go" aria-hidden="true">↓</span></span>
     </a>
-    <a class="tab" href="#series-3">
-      <span class="tab-num">Sèrie 03</span>
+    <a class="tab" href="#series-3" aria-label="Sèrie 03: Gestió de la tecnologia: estratègia i anàlisi de cartera, 4 pensaments">
+      <span class="tab-num" aria-hidden="true">03</span>
       <span class="tab-name">Gestió de la tecnologia: estratègia i anàlisi de cartera</span>
-      <span class="tab-cert">Certificat CTO MIT</span>
-      <span class="tab-count">4 pensaments</span>
+      <span class="tab-meta"><span>4 pensaments</span><span class="tab-go" aria-hidden="true">↓</span></span>
     </a>
   </div>
 </nav>
@@ -364,11 +385,15 @@ footer{
 
 <div class="reader" id="reader" role="dialog" aria-modal="true" aria-labelledby="pageHook" hidden>
   <article class="page">
-    <button class="page-close" id="closeBtn" aria-label="Tanca l’article">Tanca ✕</button>
+    <div class="page-actions">
+      <button class="page-close" id="copyBtn" type="button">Copia l’enllaç</button>
+      <button class="page-close" id="closeBtn" type="button" aria-label="Tanca l’article">Tanca ✕</button>
+    </div>
     <p class="page-series" id="pageSeries"></p>
     <h2 class="page-hook" id="pageHook"></h2>
     <p class="page-title" id="pageTitle"></p>
     <div class="page-body" id="pageBody"></div>
+    <nav class="page-nav" id="pageNav" aria-label="More pensaments"></nav>
   </article>
 </div>
 
@@ -400,7 +425,7 @@ const SERIES = [
     <p class="beat">Com a líders, decidim què és acceptable i què no.</p>
     <p class="beat">Podem veure la fricció que altres normalitzen.</p>
     <p>Ens pot importar prou per anomenar allò que ningú no anomena.</p>
-    <p>Buscar problemes és demostrar que t’importa.</p>
+    <p>Buscar problemes és un acte de cura.</p>
     <p class="takeaway">Així és com el lideratge es converteix en catalitzador de la innovació &mdash; no només en una resposta.</p>`
   },
   {
@@ -750,7 +775,6 @@ SERIES.forEach((s, si) => {
   const sec = document.createElement('section');
   sec.className = 'series';
   sec.id = 'series-' + (si + 1);
-  sec.style.borderTopColor = ['var(--teal)','var(--gold)'][si % 2];
   sec.innerHTML = `
     <div class="series-head">
       <span class="series-tag">${s.tag}</span>
@@ -776,20 +800,63 @@ SERIES.forEach((s, si) => {
   main.appendChild(sec);
 });
 
-/* ---------- reader ---------- */
+/* ---------- reader: each thought has its own link, e.g. #s1-problem-seekers ---------- */
 const reader = document.getElementById('reader');
 const closeBtn = document.getElementById('closeBtn');
+const copyBtn = document.getElementById('copyBtn');
+const pageNav = document.getElementById('pageNav');
+const slugify = t => t.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/&/g,' i ').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+const POSTS = [];
+SERIES.forEach((s, si) => s.posts.forEach((p, pi) => POSTS.push({si, pi, slug:`s${si + 1}-${slugify(p.title)}`})));
+const CARDS = document.querySelectorAll('.card');
 let lastFocus = null;
+let currentSlug = null;
+/* restricted previews (no real address) refuse history changes: never let that stop the reader */
+function setHash(hash){
+  try { history.replaceState(null, '', hash || (location.pathname + location.search)); } catch(e){}
+}
+function shareUrl(){
+  const live = /^https?:$/.test(location.protocol);
+  const canon = document.querySelector('link[rel="canonical"]');
+  const base = live ? location.href.split('#')[0] : (canon ? canon.href : location.href.split('#')[0]);
+  return base + '#' + currentSlug;
+}
+function copyText(text){
+  if(navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+  return new Promise((ok, fail) => {
+    const t = document.createElement('textarea');
+    t.value = text; t.setAttribute('readonly',''); t.style.cssText = 'position:fixed;top:0;left:0;opacity:0';
+    document.body.appendChild(t); t.select();
+    let done = false; try { done = document.execCommand('copy'); } catch(e){}
+    t.remove(); done ? ok() : fail();
+  });
+}
 
 function openReader(si, pi, trigger){
   const s = SERIES[si], p = s.posts[pi];
-  lastFocus = trigger;
+  const i = POSTS.findIndex(x => x.si === si && x.pi === pi);
+  lastFocus = trigger || CARDS[i];
   document.getElementById('pageSeries').textContent = `${s.title} · ${p.num}`;
   document.getElementById('pageHook').innerHTML = p.hook;
   document.getElementById('pageTitle').textContent = p.title;
   document.getElementById('pageBody').innerHTML = p.body + `<p class="credit">${p.credit || s.credit}</p>`;
+
+  pageNav.innerHTML = '';
+  [[POSTS[i - 1], 'prev', '← Anterior'], [POSTS[i + 1], 'next', 'Següent →']].forEach(([t, cls, label]) => {
+    if(!t) return;
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = cls;
+    b.innerHTML = `<small>${label}</small><b>${SERIES[t.si].posts[t.pi].title}</b>`;
+    b.addEventListener('click', () => openReader(t.si, t.pi));
+    pageNav.appendChild(b);
+  });
+
+  copyBtn.textContent = 'Copia l’enllaç';
+  currentSlug = POSTS[i].slug;
+  setHash('#' + currentSlug);
   reader.hidden = false;
   reader.classList.add('open');
+  reader.scrollTop = 0;
   document.body.style.overflow = 'hidden';
   closeBtn.focus();
 }
@@ -797,11 +864,32 @@ function closeReader(){
   reader.classList.remove('open');
   reader.hidden = true;
   document.body.style.overflow = '';
-  if(lastFocus) lastFocus.focus();
+  currentSlug = null;
+  setHash('');
+  if(lastFocus) lastFocus.focus({preventScroll:true});
+}
+function openFromHash(){
+  const t = POSTS.find(x => '#' + x.slug === location.hash);
+  if(t) openReader(t.si, t.pi);
 }
 closeBtn.addEventListener('click', closeReader);
+copyBtn.addEventListener('click', async () => {
+  try { await copyText(shareUrl()); copyBtn.textContent = 'Copiat ✓'; }
+  catch(e){ copyBtn.textContent = 'No s’ha pogut copiar'; }
+});
 reader.addEventListener('click', e => { if(e.target === reader) closeReader(); });
-document.addEventListener('keydown', e => { if(e.key === 'Escape' && !reader.hidden) closeReader(); });
+document.addEventListener('keydown', e => {
+  if(reader.hidden) return;
+  if(e.key === 'Escape'){ closeReader(); return; }
+  if(e.key === 'Tab'){
+    const f = [...reader.querySelectorAll('a[href],button')];
+    const first = f[0], last = f[f.length - 1];
+    if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+    else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+  }
+});
+window.addEventListener('hashchange', openFromHash);
+openFromHash();
 </script>
 </body>
 </html>
