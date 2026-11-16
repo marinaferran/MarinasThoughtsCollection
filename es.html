@@ -52,13 +52,9 @@ html{scroll-behavior:smooth}
 }
 body{
   background:var(--cream);
-  /* engineer's graph paper: fine 24px grid, stronger line every 5 squares */
-  background-image:
-    linear-gradient(rgba(45,135,131,.10) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(45,135,131,.10) 1px,transparent 1px),
-    linear-gradient(rgba(45,135,131,.045) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(45,135,131,.045) 1px,transparent 1px);
-  background-size:120px 120px,120px 120px,24px 24px,24px 24px;
+  /* notebook dot grid */
+  background-image:radial-gradient(rgba(74,74,74,.16) 1.1px,transparent 1.6px);
+  background-size:24px 24px;background-position:12px 12px;
   color:var(--charcoal);
   font-family:var(--serif);
   line-height:1.65;
