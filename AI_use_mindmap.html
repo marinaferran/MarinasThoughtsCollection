@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How people use AI, by domain, purpose and problem</title>
+<meta name="description" content="An interactive map of 142 ways people use AI, from writing an email to decoding whale songs: the problem each one solves, the job AI does, and what the patterns reveal.">
+<meta property="og:title" content="How people use AI, by domain, purpose and problem">
+<meta property="og:description" content="An interactive map of 142 ways people use AI, and what the patterns reveal.">
+<meta name="theme-color" content="#F7F3EF">
+<link rel="icon" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<style>
+:root{
+  /* palette: Marina's colours, re-proportioned */
+  --cream:#F7F3EF;   /* the field */
+  --mist:#ECE5DC;    /* quiet surfaces, tracks */
+  --ink:#262626;     /* text */
+  --muted:#6E6862;
+  --teal:#2D8783;    /* anything you can act on */
+  --deep:#123F3C;    /* the one bold surface: case detail */
+  --gold:#DAA520;    /* what's selected */
+  --line:rgba(38,38,38,.12);
+  --display:'Bricolage Grotesque','Instrument Sans',system-ui,sans-serif;
+  --text:'Instrument Sans',system-ui,sans-serif;
+  --top:64px;
+  /* names the map script already uses */
+  --bg:var(--cream);--panel:#FFFDFA;--faint:#A39C94;--accent:var(--teal);--chip:var(--mist);
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--cream);color:var(--ink);font:15px/1.55 var(--text);-webkit-font-smoothing:antialiased}
+::selection{background:rgba(218,165,32,.35)}
+a{color:var(--teal)}
+:focus-visible{outline:2px solid var(--teal);outline-offset:2px;border-radius:4px}
+button{font:inherit;color:inherit}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}}
+
+/* ---------- top bar ---------- */
+.top{position:sticky;top:0;z-index:30;height:var(--top);display:flex;align-items:center;justify-content:space-between;gap:20px;
+  padding:0 28px;background:rgba(247,243,239,.9);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-family:var(--display);font-weight:700;font-size:17px;letter-spacing:-.01em;font-variation-settings:"wdth" 90}
+.brand img{width:30px;height:auto;display:block}
+.brand-wrap{display:flex;align-items:baseline;gap:12px;min-width:0}
+.brand-wrap .brand{align-self:center}
+.author{font-size:13.5px;color:var(--muted);text-decoration:none;white-space:nowrap;border-bottom:1px solid transparent;transition:color .15s,border-color .15s}
+.author:hover,.author:focus-visible{color:var(--teal);border-color:var(--teal)}
+.author-m{display:none}
+nav.tabs button{white-space:nowrap}
+nav.tabs{display:flex;gap:26px;height:100%}
+nav.tabs button{position:relative;background:none;border:0;padding:0;cursor:pointer;color:var(--muted);font-weight:600;font-size:14.5px;height:100%}
+nav.tabs button:hover{color:var(--ink)}
+nav.tabs button.on{color:var(--ink)}
+nav.tabs button.on::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:3px;border-radius:3px 3px 0 0;background:var(--gold)}
+
+.view{display:none}.view.on{display:block}
+
+/* ---------- map view: the map is the page ---------- */
+.mm{display:grid;grid-template-columns:330px minmax(0,1fr) 360px;height:calc(100vh - var(--top));min-height:640px}
+.rail{overflow:auto;padding:30px 26px 26px 28px;border-right:1px solid var(--line)}
+h1{font-family:var(--display);font-weight:800;font-size:58px;line-height:.92;letter-spacing:-.035em;margin:0 0 16px;font-variation-settings:"wdth" 78,"opsz" 96}
+.h1-by{display:block;margin-top:12px;font-weight:650;font-size:25px;line-height:1.05;letter-spacing:-.015em;color:var(--teal);font-variation-settings:"wdth" 85,"opsz" 32}
+.lede{margin:0 0 24px;font-size:15px;color:#4A4541;max-width:30ch}
+.rail h4{margin:20px 0 8px;font-size:12.5px;font-weight:600;color:var(--muted)}
+.rail input[type=search]{width:100%;padding:11px 14px;border:1.5px solid var(--ink);border-radius:999px;background:transparent;font:inherit;color:var(--ink)}
+.rail input[type=search]::placeholder{color:var(--faint)}
+.rail input[type=search]:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 4px rgba(45,135,131,.15)}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button{border:1.5px solid var(--line);background:transparent;border-radius:999px;padding:5px 12px;font-size:13px;font-weight:500;cursor:pointer;color:var(--ink);transition:border-color .15s,background .15s,color .15s}
+.seg button:hover{border-color:var(--ink)}
+.seg button.on{background:var(--ink);border-color:var(--ink);color:var(--cream)}
+.range{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted)}
+.range input{flex:1}
+.range b{color:var(--ink);font-family:var(--display);font-size:16px}
+input[type=checkbox],input[type=range]{accent-color:var(--teal)}
+label.chk{display:flex;gap:9px;align-items:center;font-size:14px;margin:6px 0;cursor:pointer}
+.legend{display:grid;grid-template-columns:1fr;gap:1px;font-size:13.5px}
+.legend div{display:flex;align-items:center;gap:7px;cursor:pointer;padding:3px 4px;border-radius:6px}
+.legend div:hover{background:var(--mist)}
+.legend i{width:10px;height:10px;border-radius:50%;flex:none}
+.legend div span:last-child{color:var(--faint);font-size:12px}
+#reset{margin-top:16px;background:none;border:0;padding:0;color:var(--teal);font-weight:600;cursor:pointer;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1.5px}
+.ai-note{display:flex;gap:10px;margin:0 0 18px;padding:0;font-size:12.5px;line-height:1.5;color:var(--muted)}
+.ai-note svg{width:17px;height:17px;flex:none;margin-top:1px;color:#B8860B}
+.ai-note b{color:var(--ink)}
+
+.stage{position:relative;overflow:hidden;background:radial-gradient(circle at 50% 50%,#FBF8F4 0,var(--cream) 62%)}
+.stage svg{display:block;width:100%;height:100%;cursor:grab}
+.stage svg:active{cursor:grabbing}
+.key{position:absolute;right:18px;top:18px;display:flex;flex-direction:column;gap:5px;padding:10px 12px;background:rgba(247,243,239,.88);border:1px solid var(--line);font-size:12.5px;color:var(--ink);pointer-events:none}
+.key span{display:flex;align-items:center;gap:8px}
+.key svg{width:14px;height:14px;flex:none}
+.stage .hint{position:absolute;left:20px;bottom:16px;font-size:12px;color:var(--faint);pointer-events:none}
+.stage .zbtns{position:absolute;left:20px;top:18px;display:flex;gap:6px}
+.stage .zbtns button{width:34px;height:34px;border:1.5px solid var(--line);background:var(--cream);border-radius:50%;cursor:pointer;font-size:15px;color:var(--ink);transition:border-color .15s}
+.stage .zbtns button:hover{border-color:var(--ink)}
+
+/* the guide & detail panel: a soft teal tint */
+.panel{margin:14px 14px 14px 0;padding:24px 24px 28px;background:#E5EEEB;color:var(--ink);border-radius:0;overflow:auto}
+.panel .crumb{font-size:12.5px;color:#477773;font-weight:600;margin:0}
+.panel h3{font-family:var(--display);font-weight:700;font-size:28px;line-height:1.04;letter-spacing:-.02em;margin:6px 0 14px;color:var(--ink);font-variation-settings:"wdth" 85,"opsz" 48}
+.panel h4{margin:22px 0 8px;font-size:12.5px;font-weight:600;color:#477773}
+.panel p{margin:0 0 8px}
+.panel b{color:var(--ink)}
+.panel a{color:var(--teal)}
+.back{background:none;border:0;padding:0;margin:0 0 14px;color:var(--teal);font-weight:600;font-size:13px;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.howto{margin:0;padding:0;list-style:none}
+.howto li{position:relative;padding:0 0 10px 18px;font-size:14px;line-height:1.5}
+.howto li::before{content:"";position:absolute;left:2px;top:.6em;width:7px;height:7px;border-radius:50%;background:var(--teal)}
+.paths{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.paths button{display:flex;flex-direction:column;gap:3px;text-align:left;cursor:pointer;padding:11px 12px 12px;border-radius:14px;
+  background:rgba(255,255,255,.65);border:1px solid rgba(45,135,131,.16);transition:border-color .15s,background .15s}
+.paths button:hover{border-color:var(--teal);background:#fff}
+.paths button.on{border-color:var(--teal);background:#fff;box-shadow:inset 0 0 0 1px var(--teal)}
+.paths b{font-size:14px;font-weight:600;line-height:1.25;display:flex;align-items:center;gap:7px}
+.paths b i{width:9px;height:9px;border-radius:50%;flex:none}
+.paths span{font-size:12.5px;line-height:1.35;color:var(--muted)}
+.path-note{margin:12px 0 0;font-size:13px;color:#477773;min-height:1.4em}
+.path-note button{background:none;border:0;padding:0;color:var(--teal);font-weight:600;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px}
+.chip{background:rgba(45,135,131,.12);border-radius:999px;padding:3px 11px;font-size:12.5px;color:#1F5F5C}
+.bar{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);margin:6px 0}
+.bar .t{flex:1;height:6px;background:rgba(38,38,38,.08);border-radius:999px;overflow:hidden}
+.bar .t i{display:block;height:100%;background:var(--teal);border-radius:999px}
+.bar b{color:var(--ink);font-weight:600}
+.minilist{margin:0;padding:0;list-style:none}
+.minilist li{padding:9px 0;border-bottom:1px solid rgba(38,38,38,.1);font-size:14px;cursor:pointer;display:flex;justify-content:space-between;gap:10px;transition:color .15s}
+.minilist li:hover{color:var(--teal)}
+.minilist li span{color:var(--muted);font-size:12px;white-space:nowrap}
+.panel .note{font-size:12.5px;color:var(--muted);margin-top:16px}
+.empty{color:var(--muted);font-size:13px}
+
+/* svg */
+.link{fill:none;stroke:rgba(38,38,38,.16);stroke-width:1}
+.xlink{fill:none;stroke-width:1.2;stroke-dasharray:3 3;opacity:0;pointer-events:none}
+.showx .xlink{opacity:.18}
+.xlink.hot{opacity:.95!important;stroke-dasharray:none;stroke-width:2.2}
+.xlink.focus{opacity:.85!important;stroke-width:1.6}
+.node.rel{opacity:.8}
+.node.rel circle{stroke:var(--ink);stroke-width:1}
+.node text{font-family:var(--text);font-size:10.5px;fill:#3D3935;cursor:pointer}
+.node:hover text{fill:#000}
+.node.c:hover text{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px}
+.node.c text{font-family:var(--display);font-size:14px;font-weight:700;fill:var(--ink);letter-spacing:-.01em}
+.node.s text{font-size:12.5px;font-weight:600;fill:#3F3A35;paint-order:stroke;stroke:#F7F3EF;stroke-width:3.5px;stroke-linejoin:round}
+.node circle{stroke:var(--cream);stroke-width:1.4;cursor:pointer}
+.node path.shape{cursor:pointer}
+.node.dim{opacity:.1}
+.link.dim{opacity:.12}
+.link.hot{stroke-width:2.6!important;stroke-opacity:1!important;opacity:1!important}
+.node.sel circle{stroke:var(--gold);stroke-width:3}
+.node.hit text{font-weight:700;fill:#000}
+
+/* ---------- catalog & method ---------- */
+.page{max-width:1400px;margin:0 auto;padding:44px 28px 24px}
+.page-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:22px}
+.page h2{font-family:var(--display);font-weight:800;font-size:48px;line-height:.95;letter-spacing:-.03em;margin:0;font-variation-settings:"wdth" 80,"opsz" 96}
+.page-head p{margin:8px 0 0;color:var(--muted)}
+.cat-tools{display:flex;gap:8px;flex-wrap:wrap}
+.cat-tools input,.cat-tools select{padding:9px 14px;border:1.5px solid var(--line);border-radius:999px;background:transparent;font:inherit;font-size:14px;color:var(--ink)}
+.cat-tools input{min-width:240px}
+.cat-tools input:focus,.cat-tools select:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 4px rgba(45,135,131,.15)}
+.tablewrap{max-height:calc(100vh - 240px);overflow:auto;border-top:2px solid var(--ink)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12.5px;font-weight:600;color:var(--muted);cursor:pointer;user-select:none;position:sticky;top:0;background:var(--cream);z-index:1}
+th:hover{color:var(--ink)}
+tr.r td{transition:background .12s}
+tr.r:hover td{background:#F0E9DF;cursor:pointer}
+td b{font-weight:600}
+td .dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:7px}
+.method{display:grid;grid-template-columns:minmax(0,62ch) minmax(0,1fr);gap:56px;align-items:start}
+.method p{margin:0 0 14px}
+.method .warn{padding:14px 16px;border-left:3px solid var(--gold);background:rgba(218,165,32,.1);border-radius:0 10px 10px 0}
+.method h3{font-family:var(--display);font-weight:700;font-size:22px;letter-spacing:-.02em;margin:0 0 12px}
+.src{margin:0;padding:0;list-style:none;font-size:14px}
+.src li{padding:8px 0;border-bottom:1px solid var(--line)}
+.src a{color:var(--ink);text-decoration:none}
+.src a:hover{color:var(--teal)}
+
+footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:18px 28px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+footer a{color:var(--ink);font-weight:600;text-decoration:none}
+footer a:hover{color:var(--teal)}
+
+.tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--cream);font-size:12.5px;line-height:1.45;padding:8px 11px;border-radius:10px;max-width:270px;opacity:0;transition:opacity .1s;z-index:40}
+
+@media (max-width:1180px){
+  .mm{grid-template-columns:300px minmax(0,1fr);grid-template-rows:auto auto;height:auto}
+  .rail{grid-row:1/3}
+  .stage{height:72vh;min-height:560px}
+  .panel{margin:0 14px 14px 0}
+  .method{grid-template-columns:1fr;gap:28px}
+}
+@media (max-width:760px){
+  .paths{grid-template-columns:1fr}
+  .top{padding:0 16px}
+  nav.tabs{gap:16px}
+  nav.tabs button{font-size:13.5px}
+  .brand span{display:none}
+  .brand-wrap .author{display:none}
+  .author-m{display:inline-block;margin:-4px 0 14px;font-size:14px}
+  nav.tabs{gap:14px}
+  .mm{display:flex;flex-direction:column}
+  .rail{display:contents}
+  .rail-head{order:1;padding:24px 16px 18px}
+  .stage{order:2}
+  .rail-ctrl{order:3;padding:6px 16px 8px}
+  .panel{order:4}
+  .key{flex-direction:row;flex-wrap:wrap;gap:4px 12px;left:76px;right:12px;top:14px;padding:7px 10px}
+  .stage .zbtns{flex-direction:column;left:14px;top:14px}
+  .legend{grid-template-columns:1fr 1fr;gap:1px 10px}
+  h1{font-size:50px}
+  .h1-by{font-size:23px;margin-top:8px}
+  .lede{max-width:none}
+  .stage{height:78vh;min-height:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .panel{margin:14px}
+  .page{padding:30px 16px}
+  .page h2{font-size:40px}
+  .cat-tools input{min-width:0;flex:1 1 100%}
+  footer{padding:18px 16px}
+}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="brand-wrap"><a class="brand" href="#"><img src="data:image/png;base64,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" alt=""><span>How people use AI</span></a><a class="author" href="https://www.linkedin.com/in/marinaferran/" target="_blank" rel="noopener">by Marina Ferran</a></div>
+  <nav class="tabs" id="tabs" aria-label="Views">
+    <button data-v="map" class="on">Map</button>
+    <button data-v="cat">Catalog</button>
+    <button data-v="src">Method &amp; sources</button>
+  </nav>
+</div>
+<main>
+  <section class="view on" id="v-map">
+    <div class="mm">
+      <aside class="rail">
+        <div class="rail-head">
+        <h1>How people use AI <span class="h1-by">by domain, purpose and problem</span></h1>
+        <a class="author author-m" href="https://www.linkedin.com/in/marinaferran/" target="_blank" rel="noopener">by Marina Ferran</a>
+        <p class="lede">142 uses, from writing an email to talking to sperm whales. Each one mapped by the domain it sits in, what the person wants, and the problem it solves.</p>
+        <p class="ai-note" role="note"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M10 2.8 18.2 17H1.8Z"/><path d="M10 8v4.2M10 14.6v.1"/></svg><span><b>AI-generated.</b> Researched and built with AI. It may contain errors or hallucinations, so check the linked sources before relying on a detail.</span></p>
+        <input type="search" id="q" placeholder="Search: grief, code, whales…" aria-label="Search use cases">
+        </div>
+        <div class="rail-ctrl">
+        <h4>Hide the ordinary</h4>
+        <div class="range"><span>Originality from</span><input type="range" id="wmin" min="1" max="5" step="1" value="1" aria-label="Minimum originality"><b id="wminv">1</b></div>
+        <h4>Colour use-case dots by</h4>
+        <div class="seg" id="colorBy">
+          <button data-k="cluster" class="on">Domain</button><button data-k="role">AI role</button><button data-k="problem">Problem</button><button data-k="w">Originality</button>
+        </div>
+        <h4>Legend <span style="font-weight:400">(click to filter)</span></h4>
+        <div class="legend" id="legend"></div>
+        <button id="reset">Reset the map</button>
+        </div>
+      </aside>
+      <div class="stage" id="stage">
+        <svg id="svg" aria-label="Radial map of AI use cases"></svg>
+        <div class="zbtns"><button id="zin" aria-label="Zoom in">+</button><button id="zout" aria-label="Zoom out">−</button><button id="zfit" aria-label="Fit the map">⤢</button></div>
+        <div class="key" aria-label="Map key">
+          <span><svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="5.2" fill="#F7F3EF" stroke="#DAA520" stroke-width="2.4"/></svg>Centre</span>
+          <span><svg viewBox="0 0 16 16"><rect x="3" y="3" width="10" height="10" fill="#6E6862"/></svg>Domain</span>
+          <span><svg viewBox="0 0 16 16"><rect x="4.2" y="4.2" width="7.6" height="7.6" fill="#F7F3EF" stroke="#6E6862" stroke-width="1.8"/></svg>Sub-domain</span>
+          <span><svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="4" fill="#6E6862"/></svg>Use case</span>
+        </div>
+        <div class="hint">Drag to move, scroll to zoom. Click a domain to focus on it, a use case to open it.</div>
+      </div>
+      <aside class="panel" id="panel" aria-live="polite"></aside>
+    </div>
+  </section>
+
+  <section class="view" id="v-cat">
+    <div class="page">
+      <div class="page-head">
+        <div><h2>Catalog</h2><p>Every use case in one table. Sort by any column; click a row to open it on the map.</p></div>
+        <div class="cat-tools">
+          <input type="search" id="cq" placeholder="Filter use cases" aria-label="Filter use cases">
+          <select id="cc" aria-label="Domain"></select>
+          <select id="cr" aria-label="AI role"></select>
+          <select id="cp" aria-label="Problem"></select>
+        </div>
+      </div>
+      <div class="tablewrap"><table id="tbl"></table></div>
+    </div>
+  </section>
+
+  <section class="view" id="v-src">
+    <div class="page">
+      <div class="page-head"><div><h2>Method &amp; sources</h2><p>How the map was built, and where each claim comes from.</p></div></div>
+      <div class="method">
+        <div>
+          <p class="warn"><b>AI-generated.</b> The research, coding and scoring behind this map were produced with AI. It may contain errors or hallucinations, including in figures and source attributions. Treat it as a starting point and check the sources.</p>
+      <p><b>Structure.</b> Three levels: 12 domains (the underlying human need), 43 sub-domains, and individual use cases. Domains are arranged in a ring so neighbours share themes (Learn sits next to Science, Mind next to Spirit, Play next to Create). Dashed links mark cases that belong to more than one domain.</p>
+      <p><b>Each use case is coded on:</b> field · problem type (what's wrong) · purpose (what the person wants) · AI role (the job AI does) · mode (augment = person stays in the loop, automate = AI does it, relate = the relationship is the point) · how common (1–5) · how original (1–5).</p>
+      <p><b>Scores are editorial.</b> "How common" reflects published usage studies where they exist (OpenAI/NBER, Anthropic Economic Index, HBR Top-100) and reporting otherwise. "How original" is distance from mainstream expectations of a chatbot. Treat both as ranks, not measurements.</p>
+      <p><b>Scope.</b> Consumer chat use, professional use, and specialised AI systems (science, agriculture, accessibility). Harmful uses (scams, deepfakes) appear only where they create a counter-use.</p>
+        </div>
+        <div>
+          <h3>Sources</h3>
+          <ul class="src" id="srclist"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+  <span>An interactive map by <a href="https://www.linkedin.com/in/marinaferran/" target="_blank" rel="noopener">Marina Ferran</a></span>
+  <span>AI-generated and may contain errors. <a href="#" id="toMethod">Read the method</a></span>
+</footer>
+<div class="tip" id="tip"></div>
+
+<script>
+/* ============ DATA ============ */
+const CLUSTERS = [
+ {k:"learn",n:"Know & Learn",t:"Close an information or skill gap",s:[["ans","Answers & search"],["tut","Tutoring & study"],["cur","Curiosity rabbit holes"]]},
+ {k:"sci",n:"Discover",t:"Push the frontier of knowledge",s:[["bio","Biology & medicine R&D"],["phy","Physical world"],["math","Math & computing"],["rw","Researcher workflow"]]},
+ {k:"per",n:"Perceive the World",t:"See, hear and decode what humans can't",s:[["id","Identify things"],["dec","Decode the undecodable"],["acc","Accessibility senses"]]},
+ {k:"body",n:"Body & Health",t:"Understand and care for the body",s:[["sym","Symptoms & results"],["liv","Healthy living"],["cli","Clinical care"]]},
+ {k:"mind",n:"Mind & Emotion",t:"Feel better, relate better",s:[["sup","Support & therapy"],["com","Companionship"],["rel","Relationships"],["self","Self & purpose"]]},
+ {k:"spirit",n:"Meaning & Spirit",t:"Faith, fate, death and the big questions",s:[["faith","Faith"],["div","Divination"],["death","Death & memory"],["exi","Existential"]]},
+ {k:"play",n:"Play & Absurd",t:"Fun, mischief and nonsense",s:[["fun","Fun & nonsense"],["rp","Roleplay & games"],["mis","Pranks & mischief"],["soc","Social life"]]},
+ {k:"make",n:"Make & Create",t:"Turn intent into artefacts",s:[["wri","Writing"],["vis","Visual"],["av","Audio & video"],["ide","Ideation"]]},
+ {k:"build",n:"Build & Automate",t:"Software, agents and data",s:[["code","Coding"],["agt","Agents & automation"],["dat","Data work"]]},
+ {k:"work",n:"Work & Business",t:"Run organisations and earn a living",s:[["wc","Workplace communication"],["comm","Commerce & customers"],["pro","Professional services"],["farm","Field & farm"]]},
+ {k:"prot",n:"Protect & Govern",t:"Security, justice, public good",s:[["fraud","Fraud & security"],["just","Justice & law"],["pub","Public sector & planet"]]},
+ {k:"life",n:"Navigate Daily Life",t:"Run a household, beat the bureaucracy",s:[["org","Organise life"],["mon","Money"],["bur","Bureaucracy & rights"],["shop","Shopping, travel & fixing"]]}
+];
+const ROLES = {answer:"Answer engine",tutor:"Tutor / explainer",writer:"Writer / editor",generator:"Media generator",coder:"Coder / builder",agent:"Agent / operator",analyst:"Analyst",advisor:"Advisor / coach",companion:"Listener / companion",persona:"Persona / simulator",perceiver:"Perceiver (vision, audio)",predictor:"Pattern-finder / predictor",advocate:"Advocate",sparring:"Sparring partner",organizer:"Organiser / planner",translator:"Translator",interpreter:"Interpreter of meaning"};
+const PROBLEMS = {info:"Information gap",skill:"Skill gap",time:"Time & effort",creative:"Creative block",emotion:"Emotional need",decision:"Decision under uncertainty",power:"Power asymmetry",access:"Access barrier",scale:"Scale & complexity",play:"Curiosity & play",meaning:"Meaning & identity"};
+const MODES = {aug:"Augment",auto:"Automate",rel:"Relate"};
+const SOURCES = {
+ oai:["OpenAI / NBER — How people use ChatGPT (2025)","https://openai.com/index/how-people-are-using-chatgpt/"],
+ aei:["Anthropic Economic Index — Economic primitives (Jan 2026)","https://www.anthropic.com/research/anthropic-economic-index-january-2026-report"],
+ aeim:["Anthropic Economic Index — Learning curves (Mar 2026)","https://www.anthropic.com/research/economic-index-march-2026-report"],
+ hbr:["HBR — How people are really using gen AI in 2025 (via SEJ / summaries)","https://www.searchenginejournal.com/top-gen-ai-use-cases-revealed-marketing-tasks-rank-low/544276/"],
+ aff:["Anthropic — How people use Claude for support, advice and companionship","https://www.anthropic.com/news/how-people-use-claude-for-support-advice-and-companionship"],
+ ceti:["Sierra — Could AI help humanity understand whales? (Project CETI)","https://www.sierraclub.org/sierra/could-ai-help-humanity-understand-whales"],
+ scroll:["CNN — AI revealed the unexpected in 2024 (Herculaneum scrolls, archaeology)","https://ktvz.com/cnn-other/2024/12/21/4-ways-artificial-intelligence-revealed-the-unexpected-in-2024/"],
+ court:["NPR — AI video of slain victim delivers impact statement","https://www.opb.org/article/2025/05/07/ai-used-to-make-video-of-deceased-victim-deliver-impact-statement-in-court"],
+ jesus:["TechRadar — AI Jesus in a Swiss church confessional","https://techradar.com/computing/artificial-intelligence/meet-your-own-personal-ai-jesus-in-this-swiss-churchs-confessional"],
+ farm:["Rockefeller Foundation — AI app bridging the information gap for India's farmers","https://www.rockefellerfoundation.org/grantee-impact-stories/how-an-ai-based-app-is-bridging-the-information-gap-for-indias-farmers/"],
+ devex:["Devex — How a chat app is empowering smallholder farmers","https://www.devex.com/news/ai-for-agriculture-how-a-chat-app-is-empowering-smallholder-farmers-112016/amp"],
+ bme:["Be My Eyes (Wikipedia)","https://en.wikipedia.org/wiki/Be_My_Eyes"],
+ mirror:["The Batch — Blind users use AI as virtual mirrors","https://www.deeplearning.ai/the-batch/blind-users-can-use-ai-models-as-virtual-mirrors-but-dont-always-like-what-they-see"],
+ af:["Google DeepMind — Science (AlphaFold, AlphaProof, GNoME, AlphaChip)","https://deepmind.google/science/"],
+ gc:["Google — 9 ways AI is advancing science (GraphCast, floods)","https://blog.google/technology/ai/google-ai-big-scientific-breakthroughs-2024/"],
+ ax25:["Axios — 2025's AI-fueled scientific breakthroughs","https://www.axios.com/2025/12/31/2025-ai-scientific-breakthroughs"],
+ daisy:["NPR — O2's AI 'granny' Daisy wastes scammers' time","https://www.npr.org/2024/12/10/nx-s1-5220362/daisy-ai-granny-o2-fraud-spam-prevention"],
+ ins:["NBC Chicago — AI helping patients fight insurance denials","https://www.nbcchicago.com/consumer/how-ai-is-helping-patients-fight-back-against-denied-health-insurance-claims/3835599/?amp=1"],
+ stl:["Stateline — AI vs AI: patients deploy bots to battle insurers","https://stateline.org/?p=16194"],
+ tarot:["PBS / The Conversation — Tarot readers turning to AI","https://www.pbs.org/newshour/arts/more-tarot-readers-are-turning-to-ai-for-advice-another-sign-of-our-growing-reliance-on-chatbots-for-emotional-support"],
+ rns:["Religion News — How AI entered the world of tarot","https://religionnews.com/2025/06/30/how-ai-entered-the-world-of-tarot/"],
+ bazi:["MIT Technology Review — DeepSeek fortune-telling in China","https://www.technologyreview.com/2025/03/03/1112604/deepseek-fortune-teller-china/"],
+ sg:["SlashGear — Weirdest ways people use AI (cow matchmaking, Life2vec, pet translation)","https://www.slashgear.com/1985358/weirdest-ways-people-are-using-ai-tools"],
+ tg:["Tom's Guide — 9 weirdest ways I used AI in 2025","https://www.tomsguide.com/ai/the-9-weirdest-ways-i-used-ai-in-2025-and-the-surprising-part-is-they-actually-worked"],
+ tr:["TechRadar — Unusual, useful ChatGPT uses from Reddit","https://www.techradar.com/ai-platforms-assistants/chatgpt/people-are-using-chatgpt-for-much-more-than-writing-and-research-these-are-the-7-ideas-i-want-to-steal"],
+ bp:["Bored Panda — 44 unhinged ways people used ChatGPT","https://boredpanda.com/people-share-insane-ways-they-used-chat-gpt"],
+ life:["Life.lk — 'I use ChatGPT to train my boyfriend'","https://www.life.lk/article/plus/253/21510"],
+ mitu:["mitú — Horse lawyers to divorce strategy: weirdest ChatGPT uses","https://wearemitu.com/wearemitu/culture/wildest-weirdest-ways-people-use-chatgpt/"],
+ wapo:["PCWorld on Washington Post WildChat analysis","https://www.pcworld.com/article/2418551/new-report-reveals-what-chatbots-are-used-for.html"],
+ nyc:["SiliconANGLE — AI avatar rejected in NY appeals court","https://siliconangle.com/?p=695897"]
+};
+// [name, cluster, sub, domain, problem, purpose, how, role, freq, weird, mode, cross[], src]
+const R = [
+// LEARN
+["Quick fact lookup instead of a search engine","learn","ans","General knowledge","info","Get a direct answer fast","Answers in plain language, replacing ten blue links","answer",5,1,"aug",[],"oai"],
+["Explain a concept like I'm five","learn","ans","Education","skill","Understand something hard","Rephrases at the right level, with analogies","tutor",5,1,"aug",[],"oai"],
+["Fact-check a viral claim","learn","ans","Media literacy","info","Know if something is true","Weighs evidence and flags what's unverified","analyst",3,2,"aug",["prot"],null],
+["Compare products or options","learn","ans","Consumer research","decision","Choose well","Builds side-by-side comparisons from specs and reviews","analyst",4,1,"aug",["life"],"oai"],
+["Step-by-step homework help","learn","tut","Education","skill","Pass the class","Walks through the method, not only the answer","tutor",5,1,"aug",[],"oai"],
+["Quizzes and flashcards for exam prep","learn","tut","Education","skill","Remember material","Turns notes into practice questions","tutor",4,1,"aug",[],null],
+["Conversation partner for a new language","learn","tut","Languages","skill","Become fluent","Role-plays a café waiter or a job interviewer in the target language","persona",4,2,"aug",["play"],null],
+["Summarise papers, books and reports","learn","tut","Knowledge work","time","Absorb more in less time","Condenses long text into key points","writer",5,1,"auto",["work"],"oai"],
+["Socratic coach that won't give the answer","learn","tut","Education","skill","Actually learn, not copy","Asks guiding questions instead of answering","tutor",3,2,"aug",[],"hbr"],
+["Explore topics of interest","learn","cur","General","play","Satisfy curiosity","Follows tangents for as long as you do","answer",4,2,"aug",[],"hbr"],
+["Ask embarrassing questions privately","learn","cur","Personal","emotion","Learn without being judged","Answers what you wouldn't ask a person","answer",4,2,"aug",["body"],"sg"],
+["Interview a historical figure","learn","cur","History","play","Make history vivid","Simulates the voice and views of a historical person","persona",2,3,"aug",["play"],null],
+["Walk guide: what to look for on this route","learn","cur","Leisure","play","See more on a walk","Reads a map photo and lists things worth spotting","perceiver",2,3,"aug",["per"],"tr"],
+// SCIENCE
+["Predict protein structures","sci","bio","Structural biology","scale","Understand how proteins work","Predicts 3D shape from amino-acid sequence (AlphaFold)","predictor",3,2,"auto",[],"af"],
+["Design new drug molecules","sci","bio","Pharma","scale","Find treatments faster","Generates and scores candidate molecules","predictor",2,2,"auto",["body"],"af"],
+["Read the genome's regulatory code","sci","bio","Genomics","scale","Link DNA variants to disease","Predicts effects of long DNA sequences (AlphaGenome)","predictor",2,3,"auto",["body"],"ax25"],
+["AI co-scientist proposing hypotheses","sci","bio","Research","scale","Decide what to test next","Reads literature and proposes experiments","agent",2,3,"aug",[],"af"],
+["10-day weather forecasting","sci","phy","Meteorology","scale","Warn people earlier","Learns from decades of weather data; tracks cyclones (GraphCast)","predictor",3,2,"auto",["prot"],"gc"],
+["Flood forecasting in data-poor regions","sci","phy","Climate","scale","Save lives and property","Forecasts river floods where gauges are scarce","predictor",2,2,"auto",["prot"],"gc"],
+["Discover new materials","sci","phy","Materials science","scale","Better batteries and solar cells","Predicts stable inorganic crystals (GNoME)","predictor",1,3,"auto",[],"af"],
+["Control fusion plasma","sci","phy","Energy","scale","Make fusion work","Steers magnetic fields inside a reactor in real time","agent",1,4,"auto",[],"af"],
+["Prove theorems formally","sci","math","Mathematics","scale","Solve hard problems with certainty","Translates problems into formal language and searches proofs (AlphaProof)","predictor",1,3,"auto",[],"af"],
+["Discover faster algorithms","sci","math","Computer science","scale","Make computing cheaper","Evolves and tests candidate algorithms (AlphaEvolve)","agent",1,3,"auto",["build"],"af"],
+["Design chip layouts","sci","math","Hardware","scale","Faster chips","Places components on silicon (AlphaChip)","agent",1,3,"auto",["build"],"af"],
+["Literature review","sci","rw","Research","time","Know the field quickly","Finds, reads and synthesises papers","analyst",4,1,"aug",["learn"],null],
+["Statistical analysis code","sci","rw","Research","skill","Analyse data correctly","Writes and explains analysis scripts","coder",4,1,"aug",["build"],"aei"],
+["Grant and paper drafting","sci","rw","Research","time","Win funding, publish","Drafts and tightens academic prose","writer",3,1,"aug",["make"],null],
+// PERCEIVE
+["Identify a plant, mushroom or insect","per","id","Nature","info","Know what it is","Recognises species from a photo","perceiver",4,2,"aug",["learn"],null],
+["What is this building or monument?","per","id","Travel","info","Understand surroundings","Recognises landmarks from a photo and explains them","perceiver",3,2,"aug",["learn"],"tr"],
+["Scan the fridge, get a recipe","per","id","Food","time","Cook with what's there","Reads fridge contents from a photo, proposes meals","perceiver",3,2,"aug",["life"],"tg"],
+["Read old handwriting or faded documents","per","id","Genealogy","access","Recover family history","Transcribes difficult scripts","perceiver",3,2,"aug",["spirit"],null],
+["Read the burnt Herculaneum scrolls","per","dec","Archaeology","scale","Recover lost ancient texts","Finds ink in X-ray scans of scrolls that can't be unrolled","predictor",1,5,"auto",["sci"],"scroll"],
+["Decode sperm whale codas","per","dec","Animal communication","scale","Understand whale communication","Finds structure in click sequences (Project CETI)","predictor",1,5,"auto",["sci","prot"],"ceti"],
+["'Translate' what my pet is saying","per","dec","Pets","play","Feel closer to an animal","Classifies barks and meows into moods","interpreter",2,5,"aug",["play"],"sg"],
+["Find hidden archaeological sites","per","dec","Archaeology","scale","Locate sites in vast terrain","Scans aerial imagery for geoglyph patterns","perceiver",1,4,"auto",["sci"],"scroll"],
+["Describe the scene for a blind user","per","acc","Accessibility","access","Live independently","Describes photos: menus, clothing, people (Be My AI)","perceiver",3,2,"aug",["body"],"bme"],
+["Virtual mirror for blind users","per","acc","Accessibility","access","Know how I look","Gives feedback on appearance and outfit","perceiver",2,4,"aug",["mind"],"mirror"],
+["Live captions and transcription","per","acc","Accessibility","access","Follow conversations","Speech-to-text in real time","perceiver",3,1,"auto",[],null],
+["Read labels and instructions aloud","per","acc","Accessibility","access","Handle daily tasks","Reads packaging, mail and screens","perceiver",3,1,"aug",["life"],"bme"],
+// BODY
+["Check symptoms before seeing a doctor","body","sym","Health","decision","Decide whether to worry","Lists possibilities and red flags","advisor",4,2,"aug",["life"],null],
+["Explain lab results and jargon","body","sym","Health","info","Understand my own body","Translates medical language into plain words","tutor",4,1,"aug",["learn"],null],
+["Prepare questions for an appointment","body","sym","Health","power","Get more from 10 minutes with a doctor","Turns worries into a prioritised question list","organizer",3,1,"aug",["life"],null],
+["Meal plans around goals and budget","body","liv","Nutrition","time","Eat better with less effort","Plans meals and shopping lists","organizer",4,1,"aug",["life"],"hbr"],
+["Custom workout programmes","body","liv","Fitness","skill","Train effectively","Builds and adjusts routines","advisor",4,1,"aug",[],"hbr"],
+["Habit and sleep coaching","body","liv","Wellbeing","decision","Stick to healthy routines","Daily check-ins and nudges","advisor",3,2,"aug",["mind"],"hbr"],
+["Ambient clinical note-taking","body","cli","Healthcare","time","Doctors look at patients, not screens","Listens to the visit and drafts the note","writer",3,1,"auto",["work"],null],
+["Triage medical images","body","cli","Radiology","scale","Catch disease earlier","Flags suspicious findings in scans","perceiver",3,2,"aug",["per"],null],
+["Faster Alzheimer's diagnosis","body","cli","Neurology","scale","Diagnose earlier and cheaper","Combines imaging and biomarkers; protein structure aided gene discovery","predictor",2,2,"aug",["sci"],"ax25"],
+// MIND
+["Late-night venting","mind","sup","Mental wellbeing","emotion","Feel heard right now","Listens without judgement, at any hour","companion",4,2,"rel",[],"hbr"],
+["Reframe anxious thoughts","mind","sup","Mental wellbeing","emotion","Think more clearly","CBT-style questioning of distorted thoughts","advisor",3,2,"aug",[],"aff"],
+["Rehearse a hard conversation","mind","sup","Interpersonal","emotion","Say it well when it counts","Plays the boss, parent or ex so you can practise","persona",3,2,"aug",["work"],"aff"],
+["Calm email guilt","mind","sup","Work stress","emotion","Stop avoiding the inbox","Triages and drafts replies to overdue emails","writer",2,3,"aug",["work"],"tg"],
+["AI friend or companion app","mind","com","Companionship","emotion","Not feel alone","Ongoing persona with memory","companion",3,3,"rel",["play"],"aff"],
+["Romantic AI partner","mind","com","Companionship","emotion","Intimacy without risk","Persona built as a partner","companion",2,4,"rel",["play"],"aff"],
+["Company for isolated elderly people","mind","com","Ageing","emotion","Reduce loneliness","Daily conversation and reminders","companion",2,3,"rel",["body"],null],
+["Decode the tone of a text message","mind","rel","Relationships","emotion","Know what they really meant","Reads subtext and suggests replies","interpreter",4,2,"aug",[],null],
+["Draft an apology or a breakup message","mind","rel","Relationships","emotion","Say the hard thing kindly","Drafts and softens wording","writer",3,2,"aug",["make"],null],
+["Referee a couple's argument","mind","rel","Relationships","decision","Settle who's right","Both sides paste their case; AI weighs in","sparring",2,4,"aug",["play"],"mitu"],
+["'Train my boyfriend'","mind","rel","Relationships","power","Change a partner's habits","Scripts and strategies for nudging behaviour","advisor",1,5,"aug",["play"],"life"],
+["Find purpose and values","mind","self","Personal growth","meaning","Know what I want from life","Guided reflection on values and direction","advisor",3,2,"aug",["spirit"],"hbr"],
+["Career change counselling","mind","self","Careers","decision","Pick the next move","Maps skills to roles, stress-tests options","advisor",4,1,"aug",["work"],"aff"],
+["Journaling partner","mind","self","Personal growth","emotion","Understand my patterns","Prompts, reflects back and asks follow-ups","companion",3,2,"rel",[],null],
+// SPIRIT
+["AI Jesus in a church confessional","spirit","faith","Religion","meaning","Spiritual conversation","Persona trained on the New Testament, as an art installation","persona",1,5,"rel",["mind","play"],"jesus"],
+["Scripture study and Q&A","spirit","faith","Religion","info","Understand sacred texts","Explains passages and context","tutor",3,2,"aug",["learn"],null],
+["Drafting sermons","spirit","faith","Religion","time","Prepare the weekly message","Drafts outlines and illustrations","writer",2,3,"aug",["make"],null],
+["Interpret a tarot spread","spirit","div","Divination","meaning","Make sense of the cards","Reads the spread and challenges the reader's biases","interpreter",2,4,"aug",["mind"],"tarot"],
+["BaZi fortune-telling with DeepSeek","spirit","div","Divination","decision","Plan life around fate","Reasons through Chinese astrology elements","interpreter",3,4,"aug",["life"],"bazi"],
+["Coffee-grounds reading that ended a marriage","spirit","div","Divination","meaning","Learn the truth about a partner","Chatbot 'read' infidelity in a photo of coffee grounds","interpreter",1,5,"aug",["mind"],"rns"],
+["Dream interpretation","spirit","div","Spirituality","meaning","Understand what a dream meant","Symbolic reading of dream content","interpreter",3,3,"aug",["mind"],null],
+["Predict life events from data","spirit","div","Research","decision","See the future","Life2vec-style models predict outcomes from life records","predictor",1,5,"auto",["sci"],"sg"],
+["Griefbot of a deceased parent","spirit","death","Grief","emotion","Hear their voice again","Persona built from texts and voice notes","persona",2,5,"rel",["mind"],null],
+["A murder victim 'speaks' at sentencing","spirit","death","Law / grief","meaning","Bring his voice into court","Family-scripted AI avatar delivered a victim impact statement","persona",1,5,"rel",["prot"],"court"],
+["Write a eulogy","spirit","death","Grief","emotion","Honour someone well","Shapes memories into a speech","writer",3,2,"aug",["make"],null],
+["Grandparent memoir from interviews","spirit","death","Family history","meaning","Preserve a life story","Turns recorded conversations into a book","writer",2,3,"aug",["make"],null],
+["Debate consciousness and meaning","spirit","exi","Philosophy","meaning","Think through big questions","Argues positions and pushes back","sparring",3,2,"aug",["learn"],"aff"],
+["A contract with AI to protect me if AI turns rogue","spirit","exi","Absurd","play","Feel safe from the future","User drafted a 'protection pact' with the chatbot","persona",1,5,"rel",["play"],"bp"],
+// PLAY
+["Absurd questions and jokes","play","fun","Entertainment","play","Laugh","Plays along with nonsense","persona",4,3,"rel",[],"hbr"],
+["Custom bedtime stories","play","fun","Parenting","creative","Stories that star my kids","Generates stories with the child's name, pets, fears","generator",4,2,"aug",["make"],"tg"],
+["Roast me / rate my outfit","play","fun","Entertainment","play","Honest, funny feedback","Critiques a photo with humour","perceiver",3,3,"aug",["per"],null],
+["AI dungeon master","play","rp","Games","play","Run a campaign without a human DM","Narrates, voices NPCs, tracks rules","persona",3,3,"rel",["make"],"wapo"],
+["Collaborative fan fiction","play","rp","Fiction","creative","Continue a world I love","Co-writes in an established style","writer",3,2,"aug",["make"],"wapo"],
+["Shakespearean complaint letters","play","mis","Humour","play","Make a petty complaint memorable","Rewrites grievances in an absurd register","writer",2,4,"aug",["life"],null],
+["Settle bar bets","play","mis","Social","info","Win the argument","Instant arbitration on trivia","answer",3,2,"aug",["learn"],null],
+["Dating app openers and 'rizz'","play","soc","Dating","emotion","Get a reply","Writes openers and analyses profiles","writer",3,3,"aug",["mind"],null],
+["Gift ideas","play","soc","Shopping","creative","Find the right gift","Suggests gifts from a description of the person","advisor",4,1,"aug",["life"],null],
+["Plan a party or trivia night","play","soc","Events","time","Host without stress","Themes, schedules, questions","organizer",3,1,"aug",["life"],null],
+// MAKE
+["Draft emails and documents","make","wri","Communication","time","Get it written","First drafts from bullet points","writer",5,1,"aug",["work"],"oai"],
+["Edit and polish text","make","wri","Communication","skill","Sound clearer","Rewrites for tone, length and grammar","writer",5,1,"aug",["work"],"oai"],
+["Translate text","make","wri","Languages","access","Communicate across languages","Translates with tone preserved","translator",4,1,"auto",["learn"],"oai"],
+["Wedding vows and speeches","make","wri","Life events","creative","Say it beautifully","Turns memories into a speech","writer",3,2,"aug",["mind"],null],
+["Generate images for posters and posts","make","vis","Design","creative","Visuals without a designer","Text-to-image generation","generator",4,1,"auto",["work"],null],
+["Mock up my room redesigned","make","vis","Interior design","decision","See it before buying","Restyles a photo of a real room","generator",3,2,"aug",["life"],null],
+["Garden plan for bees and butterflies","make","vis","Gardening","skill","Year-round colour that attracts pollinators","Designs a planting scheme by season and colour","advisor",2,3,"aug",["life"],"bp"],
+["Generate music","make","av","Music","creative","Make a song without instruments","Text-to-music generation","generator",3,2,"auto",["play"],null],
+["Generate video clips","make","av","Video","creative","Video without a crew","Text-to-video generation","generator",3,2,"auto",["work"],null],
+["Clone my voice for narration","make","av","Audio","time","Record without a studio","Voice synthesis from samples","generator",2,3,"auto",["work"],null],
+["Brainstorm ideas","make","ide","Creativity","creative","Get unstuck","Generates many options fast","sparring",5,1,"aug",["work"],"hbr"],
+["Name a product, pet or band","make","ide","Creativity","creative","Find the right name","Generates and filters names","generator",4,1,"aug",[],null],
+["Worldbuilding for novels and games","make","ide","Fiction","creative","Build a consistent world","Tracks lore, maps, histories","sparring",3,2,"aug",["play"],"wapo"],
+// BUILD
+["Generate code","build","code","Software","time","Ship faster","Writes functions, tests and boilerplate","coder",5,1,"aug",[],"hbr"],
+["Debug and troubleshoot","build","code","Software","skill","Make it work","Reads errors and proposes fixes","coder",5,1,"aug",[],"aei"],
+["Explain legacy code","build","code","Software","info","Understand an old codebase","Walks through unfamiliar code","tutor",4,1,"aug",["learn"],null],
+["Non-programmers 'vibe-coding' personal apps","build","code","Personal software","skill","Have a tool built for exactly my need","Builds a working app from a description","coder",3,3,"auto",["make","life"],null],
+["Autonomous coding agents","build","agt","Software","time","Delegate whole tasks","Plans, edits and tests across a codebase via API","agent",4,1,"auto",["work"],"aeim"],
+["Browser agents that fill forms and book","build","agt","Automation","time","Skip tedious clicking","Operates websites on your behalf","agent",3,2,"auto",["life"],null],
+["Spreadsheet formulas and macros","build","agt","Office","skill","Automate repetitive work","Writes formulas and scripts","coder",4,1,"aug",["work"],null],
+["SQL and data analysis","build","dat","Analytics","skill","Answer questions with data","Writes queries, explains results","analyst",4,1,"aug",["work"],"aei"],
+["Clean messy data","build","dat","Analytics","time","Usable data","Restructures and de-duplicates","agent",3,1,"auto",["work"],null],
+// WORK
+["Meeting summaries and action items","work","wc","Workplace","time","Nothing falls through","Transcribes and extracts actions","writer",4,1,"auto",[],null],
+["Slide decks from notes","work","wc","Workplace","time","Present ideas fast","Structures content into slides","generator",4,1,"aug",["make"],null],
+["Adjust tone for the boss","work","wc","Workplace","emotion","Sound professional","Rewrites blunt messages diplomatically","writer",4,1,"aug",["mind"],null],
+["Marketing copy and ads","work","comm","Marketing","creative","Sell more","Drafts copy variants","writer",3,1,"aug",["make"],"hbr"],
+["Customer service chatbots","work","comm","Customer support","scale","Answer customers 24/7","Handles routine questions, escalates the rest","agent",4,1,"auto",[],null],
+["Personalised sales outreach","work","comm","Sales","time","More meetings booked","Researches prospects and drafts messages","writer",3,1,"aug",[],null],
+["Contract review","work","pro","Legal","skill","Spot risky clauses","Flags terms and compares to standards","analyst",3,1,"aug",["prot"],null],
+["Financial analysis and models","work","pro","Finance","skill","Better decisions","Builds models, explains variances","analyst",3,1,"aug",["build"],null],
+["Screen job applicants","work","pro","HR","scale","Hire faster","Ranks CVs against criteria","analyst",3,2,"auto",["prot"],null],
+["Voice advisory bot for smallholder farmers","work","farm","Agriculture","access","Know when to sow, irrigate, treat","Local-language voice answers for low-literacy users (FarmerChat)","advisor",3,2,"aug",["life","prot"],"farm"],
+["Diagnose crop disease from a photo","work","farm","Agriculture","info","Save the harvest","Recognises disease symptoms on leaves","perceiver",3,2,"aug",["per"],"devex"],
+["Cow matchmaking","work","farm","Livestock","decision","Better herds","Picks breeding pairs from genetics and herd history","predictor",2,5,"auto",["sci"],"sg"],
+// PROTECT
+["AI granny who wastes scammers' time","prot","fraud","Telecom / fraud","power","Keep scammers away from real people","Persona 'Daisy' rambles about her cat for up to 40 minutes","persona",1,5,"auto",["play"],"daisy"],
+["Spot a scam message","prot","fraud","Consumer safety","power","Not get conned","Checks suspicious texts and emails","analyst",3,1,"aug",["life"],null],
+["Find software vulnerabilities","prot","fraud","Cybersecurity","scale","Fix holes before attackers find them","Audits code and proposes patches","agent",2,2,"aug",["build"],null],
+["Self-represented litigants drafting filings","prot","just","Law","power","Get justice without a lawyer","Explains procedure, drafts documents","advocate",3,2,"aug",["life"],null],
+["AI avatar argues a case in appeals court","prot","just","Law","power","Present an argument without speaking","Litigant submitted an AI avatar; judges rejected it","persona",1,5,"auto",["play"],"nyc"],
+["Wildlife monitoring","prot","pub","Conservation","scale","Protect species","Identifies animals in camera-trap and audio data","perceiver",2,2,"auto",["per","sci"],null],
+["Early wildfire detection","prot","pub","Environment","scale","Respond faster","Spots smoke in camera feeds and satellite data","perceiver",2,2,"auto",["sci"],"gc"],
+["Government service chatbots","prot","pub","Public sector","access","Get help from the state","Answers questions on benefits and services","agent",3,1,"auto",["life"],null],
+// LIFE
+["Plan my day and to-do list","life","org","Productivity","time","Feel in control","Prioritises tasks and builds schedules","organizer",4,1,"aug",[],"hbr"],
+["Split household chores fairly","life","org","Household","power","Share the mental load","Lists hidden tasks and balances them","organizer",3,2,"aug",["mind"],null],
+["Organise my whole life","life","org","Productivity","decision","Get my life together","Acts as a planning partner across goals","organizer",4,1,"aug",["mind"],"hbr"],
+["Personal budget","life","mon","Finance","skill","Stop running out of money","Categorises spending, sets plans","advisor",4,1,"aug",[],null],
+["Tax questions","life","mon","Finance","info","File correctly","Explains rules in plain language","tutor",3,1,"aug",["learn"],null],
+["Negotiation scripts: salary, rent, car","life","mon","Finance","power","Pay less, earn more","Role-plays the other side, drafts scripts","advocate",3,2,"aug",["work"],null],
+["Appeal a health insurance denial","life","bur","Healthcare finance","power","Get the treatment covered","Drafts appeal letters from policy text and past wins","advocate",2,3,"aug",["body","prot"],"ins"],
+["Negotiate a medical bill","life","bur","Healthcare finance","power","Pay a fair price","Finds billing errors, drafts disputes","advocate",2,3,"aug",["body"],"stl"],
+["Contest a parking ticket","life","bur","Consumer rights","power","Avoid an unfair fine","Drafts the appeal with the right arguments","advocate",3,2,"aug",["prot"],null],
+["Decode a lease or legal letter","life","bur","Legal","info","Know what I'm signing","Explains clauses and risks","tutor",4,1,"aug",["prot"],null],
+["Plan a trip itinerary","life","shop","Travel","time","A good trip without hours of research","Builds day-by-day plans","organizer",4,1,"aug",[],null],
+["Research a purchase","life","shop","Shopping","decision","Buy the right thing","Compares options against my needs","analyst",4,1,"aug",[],null],
+["Fix it myself from a photo","life","shop","DIY","skill","Avoid a repair bill","Diagnoses from a photo and guides the repair","perceiver",4,2,"aug",["per"],null],
+["Diagnose a car by its sound","life","shop","Cars","info","Know if it's serious","Interprets a recording of the engine","perceiver",2,4,"aug",["per"],null]
+];
+const cases = R.map((r,i)=>({id:i,n:r[0],c:r[1],s:r[2],d:r[3],p:r[4],pur:r[5],how:r[6],r:r[7],f:r[8],w:r[9],m:r[10],x:r[11],src:r[12]}));
+const CL = Object.fromEntries(CLUSTERS.map((c,i)=>[c.k,{...c,i}]));
+const SUBN = {}; CLUSTERS.forEach(c=>c.s.forEach(([k,n])=>SUBN[c.k+"/"+k]=n));
+
+/* ============ COLOURS ============ */
+const clusterColor = k => d3.hsl(CL[k].i*30+8, .48, .46).formatHex();
+const roleKeys = Object.keys(ROLES), probKeys = Object.keys(PROBLEMS);
+const pal = ["#4e79a7","#f28e2b","#e15759","#76b7b2","#59a14f","#edc948","#b07aa1","#ff9da7","#9c755f","#79706e","#1f6f8b","#c2185b","#7cb342","#5e35b1","#00897b","#f4511e","#6d4c41"];
+const roleColor = k => pal[roleKeys.indexOf(k)%pal.length];
+const probColor = k => pal[probKeys.indexOf(k)%pal.length];
+const weirdColor = d3.scaleSequential(d3.interpolateRgbBasis(["#9fb7ad","#e3c66b","#d9653b","#8e1f4f"])).domain([1,5]);
+
+/* ============ STATE ============ */
+const st = {colorBy:"cluster",sizeBy:"f",wmin:1,xl:true,lbl:true,q:"",legend:null,sel:null,collapsed:new Set()};
+
+/* ============ TABS ============ */
+const tabs = d3.selectAll("#tabs button");
+function showView(v){
+  tabs.classed("on",function(){return this.dataset.v===v});
+  d3.selectAll(".view").classed("on",false); d3.select("#v-"+v).classed("on",true);
+  if(v==="map") requestAnimationFrame(fit);
+}
+tabs.on("click",function(){showView(this.dataset.v); scrollTo({top:0});});
+d3.select("#toMethod").on("click",e=>{e.preventDefault();showView("src");scrollTo({top:0});});
+
+/* ============ TOOLTIP ============ */
+const tip = d3.select("#tip");
+function showTip(e,html){tip.html(html).style("opacity",1);moveTip(e)}
+function moveTip(e){const w=tip.node().offsetWidth;let x=e.clientX+12;if(x+w>innerWidth-8)x=e.clientX-w-12;tip.style("left",x+"px").style("top",(e.clientY+12)+"px")}
+function hideTip(){tip.style("opacity",0)}
+
+/* ============ MINDMAP ============ */
+const svg = d3.select("#svg");
+const g = svg.append("g");
+const gx = g.append("g"), gl = g.append("g"), gn = g.append("g");
+const zoom = d3.zoom().scaleExtent([.3,6]).on("zoom",e=>g.attr("transform",e.transform));
+svg.call(zoom).on("dblclick.zoom",null);
+
+function buildTree(){
+  return {name:"How people use AI",type:"root",children:CLUSTERS.map(c=>({
+    name:c.n,type:"c",k:c.k,
+    children: st.collapsed.has(c.k)?null:c.s.map(([sk,sn])=>({name:sn,type:"s",k:c.k,sk,
+      children:cases.filter(x=>x.c===c.k&&x.s===sk).map(x=>({name:x.n,type:"l",k:c.k,d:x}))}))
+  }))};
+}
+const RAD = 470;
+const SHAPE = {
+  root: d3.symbol().type(d3.symbolCircle).size(300),   // gold ring
+  c:    d3.symbol().type(d3.symbolSquare).size(190),   // domain
+  s:    d3.symbol().type(d3.symbolSquare).size(72)     // sub-domain: empty square
+};
+let nodesById = new Map();
+function leafColor(d){
+  if(st.colorBy==="cluster") return clusterColor(d.c);
+  if(st.colorBy==="role") return roleColor(d.r);
+  if(st.colorBy==="problem") return probColor(d.p);
+  return weirdColor(d.w);
+}
+// which dashed lines show: with a domain in focus, only those leading into it; an opened use case always shows its own
+function xDisplay(d){
+  if(d.home) return "none";   // home links appear only when their use case is highlighted
+  const k=focusK();
+  if(k) return d.t===k && related(d.c) ? null : "none";
+  return (st.q||st.legend||st.wmin>1)&&!matches(d.c)?"none":null;
+}
+function focusK(){return st.legend&&st.legend[0]==="cluster"?st.legend[1]:null;}
+function related(d){
+  const k=focusK(); if(!k||d.c===k||!d.x.includes(k)) return false;
+  const keep=st.legend; st.legend=null; const ok=matches(d); st.legend=keep; return ok;
+}
+function matches(d){
+  if(d.w<st.wmin) return false;
+  if(st.legend){const [t,v]=st.legend; if(t==="cluster"&&d.c!==v)return false; if(t==="role"&&d.r!==v)return false; if(t==="problem"&&d.p!==v)return false; if(t==="w"&&d.w!==+v)return false;}
+  if(st.q){const q=st.q.toLowerCase(); const hay=(d.n+" "+d.d+" "+d.pur+" "+d.how+" "+ROLES[d.r]+" "+PROBLEMS[d.p]+" "+CL[d.c].n+" "+SUBN[d.c+"/"+d.s]).toLowerCase(); if(!hay.includes(q))return false;}
+  return true;
+}
+const radialPt=(a,r)=>[r*Math.cos(a-Math.PI/2), r*Math.sin(a-Math.PI/2)];
+
+function render(){
+  const root = d3.hierarchy(buildTree());
+  d3.cluster().size([2*Math.PI, RAD]).separation((a,b)=>(a.parent===b.parent?1:2.2)/(a.depth||1))(root);
+  // pull cluster & sub rings inward for readability
+  root.each(n=>{ if(n.depth===1) n.y=150; if(n.depth===2) n.y=300; if(n.depth===3) n.y=RAD; });
+  const all = root.descendants();
+  nodesById = new Map(); all.forEach(n=>{ if(n.data.type==="l") nodesById.set(n.data.d.id,n); });
+  const hasFilter = st.q||st.legend||st.wmin>1;
+  const visLeaf = n => n.data.type!=="l" || matches(n.data.d);
+  const subHas = n => !hasFilter || (n.children||[]).some(visLeaf) || (n.data.type==="c" && (n.children||[]).some(s=>(s.children||[]).some(visLeaf)));
+
+  // links
+  gl.selectAll("path").data(root.links(),d=>d.target.data.name+d.target.depth).join("path")
+    .attr("class","link")
+    .attr("d",d3.linkRadial().angle(d=>d.x).radius(d=>d.y))
+    .classed("dim",d=>hasFilter && (d.target.data.type==="l"? !(matches(d.target.data.d)||related(d.target.data.d)) : !subHas(d.target)))
+    .attr("stroke",d=>d.target.depth===1?clusterColor(d.target.data.k):null)
+    .attr("stroke-opacity",d=>d.target.depth===1?.5:null)
+    .attr("stroke-width",d=>d.target.depth===1?2:1);
+
+  // nodes
+  const sz = d=> d.type==="root"?10: d.type==="c"?8: d.type==="s"?4.5: 2.2+ (st.sizeBy==="f"?d.d.f:d.d.w)*1.15;
+  const node = gn.selectAll("g.node").data(all,d=>d.data.type+(d.data.k||"")+(d.data.sk||"")+(d.data.d?d.data.d.id:"")+d.data.name)
+    .join(enter=>{const e=enter.append("g"); e.append("circle"); e.append("path").attr("class","shape"); e.append("text"); return e;});
+  node.attr("class",d=>"node "+(d.data.type))
+    .attr("transform",d=>{const [x,y]=radialPt(d.x,d.y);return `translate(${x},${y})`})
+    .classed("dim",d=>hasFilter && (d.data.type==="l"? !(matches(d.data.d)||related(d.data.d)) : (d.depth>0 && !subHas(d))))
+    .classed("rel",d=>d.data.type==="l"&&related(d.data.d))
+    .classed("sel",d=>d.data.type==="l"&&st.sel===d.data.d.id)
+    .classed("hit",d=>d.data.type==="l"&&!!st.q&&matches(d.data.d));
+  // use cases are dots; the centre is a gold ring, domains are filled squares, sub-domains are empty squares
+  node.select("circle").attr("display",d=>d.data.type==="l"?null:"none")
+    .attr("r",d=>d.data.type==="l"?sz(d.data):0)
+    .attr("fill",d=>d.data.type==="l"?leafColor(d.data.d):null);
+  node.select("path.shape").attr("display",d=>d.data.type==="l"?"none":null)
+    .attr("d",d=>d.data.type==="l"?null:SHAPE[d.data.type]())
+    .attr("fill",d=> d.data.type==="root"||d.data.type==="s"?"#F7F3EF": clusterColor(d.data.k))
+    .attr("fill-opacity",1)
+    .attr("stroke",d=> d.data.type==="root"?"#DAA520": d.data.type==="s"?clusterColor(d.data.k): d.data.type==="c"&&st.collapsed.has(d.data.k)?clusterColor(d.data.k):"#F7F3EF")
+    .attr("stroke-width",d=> d.data.type==="root"?3.5: d.data.type==="s"?1.8: d.data.type==="c"&&st.collapsed.has(d.data.k)?4:1.4)
+    .attr("stroke-opacity",d=>d.data.type==="c"&&st.collapsed.has(d.data.k)?.45:1);
+  node.select("text")
+    .attr("dy","0.32em")
+    .attr("display",d=> d.data.type==="root"?"none": (d.data.type==="l"&&!st.lbl&&!(st.q&&matches(d.data.d)))?"none":null)
+    .each(function(d){
+      const t=d3.select(this);
+      if(d.data.type==="c"){ // horizontal label, outside-ish
+        const [x,y]=radialPt(d.x,26); t.attr("transform",null).attr("x",x*0.0).attr("y",0)
+          .attr("text-anchor",Math.cos(d.x-Math.PI/2)>=0?"start":"end").attr("dx",Math.cos(d.x-Math.PI/2)>=0?12:-12)
+          .text(d.data.name+(st.collapsed.has(d.data.k)?" +":""));
+        return;
+      }
+      const deg=d.x*180/Math.PI-90, flip=d.x>=Math.PI;
+      t.attr("transform",`rotate(${flip?deg+180:deg})`).attr("x",0).attr("y",0).attr("dx",flip?-8:8)
+       .attr("text-anchor",flip?"end":"start")
+       .text(d.data.type==="l"? trunc(d.data.name,44): d.data.name);
+    });
+  node.on("click",(e,d)=>{
+      if(d.data.type==="c"){ focusDomain(d.data.k); }
+      else if(d.data.type==="l"){ select(d.data.d.id); }
+      else if(d.data.type==="s"){ panelSub(d.data.k,d.data.sk); }
+    })
+    .on("mouseenter",(e,d)=>{
+      if(d.data.type==="l"){const c=d.data.d; showTip(e,`<b>${c.n}</b><br>${ROLES[c.r]} · ${PROBLEMS[c.p]}<br>common ${c.f}/5 · original ${c.w}/5`); hot(c.id,true);}
+      else if(d.data.type==="c"){showTip(e,`<b>${CL[d.data.k].n}</b><br>${CL[d.data.k].t}<br><i>${st.legend&&st.legend[0]==="cluster"&&st.legend[1]===d.data.k?"click to show all domains":"click to show only this domain"}</i>`)}
+      else if(d.data.type==="s"){showTip(e,`<b>${d.data.name}</b><br>${cases.filter(x=>x.c===d.data.k&&x.s===d.data.sk).length} use cases`)}
+    })
+    .on("mousemove",moveTip)
+    .on("mouseleave",(e,d)=>{hideTip(); if(d.data.type==="l") hot(d.data.d.id,false);});
+
+  // cross-links: leaf -> cluster node of target cluster
+  const cnode = Object.fromEntries(root.children.map(c=>[c.data.k,c]));
+  const xdata=[];
+  cases.forEach(c=>{const ln=nodesById.get(c.id); if(ln&&cnode[c.c]) xdata.push({c,t:c.c,src:ln,tn:cnode[c.c],home:true}); c.x.forEach(t=>{ const tn=cnode[t]; const src= ln || cnode[c.c]; if(src&&tn) xdata.push({c,t,src,tn}); });});
+  gx.attr("class",st.xl?"showx":null);
+  gx.selectAll("path").data(xdata,d=>d.c.id+"-"+d.t).join("path").attr("class","xlink")
+    .attr("stroke",d=>clusterColor(d.t))
+    .attr("d",d=>{const [x1,y1]=radialPt(d.src.x,d.src.y),[x2,y2]=radialPt(d.tn.x,d.tn.y); return `M${x1},${y1}Q${(x1+x2)*.18},${(y1+y2)*.18} ${x2},${y2}`;})
+    .classed("focus",d=>{const k=focusK(); return !d.home && !!k && d.t===k && related(d.c);})
+    .style("display",xDisplay);
+  drawLegend();
+  if(st.sel!==null) hot(st.sel,false);
+}
+function trunc(s,n){return s.length>n?s.slice(0,n-1)+"…":s}
+function hot(id,on){
+  const keep = on ? id : st.sel;
+  const live = keep!==null && keep!==undefined && keep>=0;
+  gx.selectAll("path").classed("hot",d=>live && d.c.id===keep).style("display",d=>live && d.c.id===keep ? null : xDisplay(d));
+  if(live) gx.selectAll("path.hot").raise();
+}
+function focusDomain(k){
+  const on = st.legend && st.legend[0]==="cluster" && st.legend[1]===k;
+  if(st.colorBy!=="cluster") setColor("cluster");
+  st.legend = on ? null : ["cluster",k];
+  clearSel(); render();
+  st.legend ? panelLegend() : panelDefault();
+}
+function clearSel(){st.sel=null; gn.selectAll("g.node").classed("sel",false); hot(-1,false);}
+
+function fit(){
+  const el=document.getElementById("svg"), w=el.clientWidth, h=el.clientHeight;
+  if(!w||!h) return;
+  const k=Math.min(w,h)/( (RAD+190)*2 );
+  svg.transition().duration(400).call(zoom.transform,d3.zoomIdentity.translate(w/2,h/2).scale(k));
+}
+d3.select("#zin").on("click",()=>svg.transition().call(zoom.scaleBy,1.4));
+d3.select("#zout").on("click",()=>svg.transition().call(zoom.scaleBy,1/1.4));
+d3.select("#zfit").on("click",fit);
+
+function drawLegend(){
+  let items;
+  if(st.colorBy==="cluster") items=CLUSTERS.map(c=>["cluster",c.k,c.n,clusterColor(c.k),cases.filter(x=>x.c===c.k).length]);
+  else if(st.colorBy==="role") items=roleKeys.map(k=>["role",k,ROLES[k],roleColor(k),cases.filter(x=>x.r===k).length]).sort((a,b)=>b[4]-a[4]);
+  else if(st.colorBy==="problem") items=probKeys.map(k=>["problem",k,PROBLEMS[k],probColor(k),cases.filter(x=>x.p===k).length]).sort((a,b)=>b[4]-a[4]);
+  else items=[1,2,3,4,5].map(v=>["w",String(v),["","Mainstream","Familiar","Unexpected","Original","Highly original"][v],weirdColor(v),cases.filter(x=>x.w===v).length]);
+  d3.select("#legend").selectAll("div").data(items,d=>d[0]+d[1]).join("div")
+    .style("opacity",d=>st.legend&&!(st.legend[0]===d[0]&&st.legend[1]===d[1])?.4:1)
+    .html(d=>`<i style="background:${d[3]}"></i><span style="flex:1">${d[2]}</span><span style="color:var(--faint)">${d[4]}</span>`)
+    .on("click",(e,d)=>{st.legend = st.legend&&st.legend[0]===d[0]&&st.legend[1]===d[1]?null:[d[0],d[1]]; clearSel(); render(); st.legend?panelLegend():panelDefault();});
+}
+
+/* panel */
+const panel=d3.select("#panel");
+const PATHS=[
+  ["Work and careers","Meetings, sales, contracts, farms",{legend:"work"}],
+  ["Health and the body","Symptoms, fitness, clinical care",{legend:"body"}],
+  ["Feelings and relationships","Support, companionship, couples",{legend:"mind"}],
+  ["Learning","Homework, languages, curiosity",{legend:"learn"}],
+  ["Science and discovery","Proteins, weather, whale songs",{legend:"sci"}],
+  ["Everyday life","Money, paperwork, travel, repairs",{legend:"life"}],
+  ["The most original ones","Hide the ordinary uses",{wmin:4}],
+  ["The job AI does","Colour the dots by AI role",{color:"role"}]
+];
+function setColor(k){st.colorBy=k;st.legend=null;d3.selectAll("#colorBy button").classed("on",function(){return this.dataset.k===k});}
+function setWmin(v){st.wmin=v;document.getElementById("wmin").value=v;d3.select("#wminv").text(v);}
+function clearPath(){setColor("cluster");setWmin(1);st.legend=null;render();panelDefault();}
+function applyPath(i){
+  const [label,,a]=PATHS[i];
+  setColor("cluster");setWmin(1);st.legend=null;
+  if(a.legend) st.legend=["cluster",a.legend];
+  if(a.wmin) setWmin(a.wmin);
+  if(a.color) setColor(a.color);
+  render();
+  panel.selectAll(".paths button").classed("on",(d,j)=>j===i);
+  const what=a.legend?`Showing <b>${CL[a.legend].n}</b> only. Click any dot for details.`:a.wmin?`Showing only the most original uses (originality 4 and 5).`:`Coloured by the job AI does. Look for one colour appearing in many domains.`;
+  panel.select("#pathNote").html(what+` <button type="button" id="clearPath">Show everything</button>`);
+  panel.select("#clearPath").on("click",clearPath);
+}
+const W_NAMES=["","Mainstream","Familiar","Unexpected","Original","Highly original"];
+function legendInfo(){
+  const [t,v]=st.legend;
+  if(t==="cluster") return {kind:"Domain",name:CL[v].n,desc:CL[v].t+".",color:clusterColor(v),test:c=>c.c===v,side:c=>SUBN[c.c+"/"+c.s]};
+  if(t==="role") return {kind:"AI role",name:ROLES[v],desc:"The job AI does in these uses, across every domain.",color:roleColor(v),test:c=>c.r===v,side:c=>CL[c.c].n};
+  if(t==="problem") return {kind:"Problem",name:PROBLEMS[v],desc:"The problem these uses solve, across every domain.",color:probColor(v),test:c=>c.p===v,side:c=>CL[c.c].n};
+  return {kind:"Originality",name:`${W_NAMES[+v]} (${v} of 5)`,desc:"How far these uses are from what people expect of a chatbot.",color:weirdColor(+v),test:c=>c.w===+v,side:c=>CL[c.c].n};
+}
+function panelLegend(){
+  document.getElementById("panel").scrollTop=0;
+  const L=legendInfo();
+  const list=cases.filter(c=>L.test(c)&&matches(c)).sort((a,b)=>b.f-a.f||a.n.localeCompare(b.n));
+  const doms=new Set(list.map(c=>c.c)).size;
+  panel.html(`<button class="back" type="button" id="toGuide">Back to the guide</button>
+   <p class="crumb"><span style="color:${L.color}">●</span> ${L.kind}</p>
+   <h3>${L.name}</h3>
+   <p>${L.desc}</p>
+   <p class="note" style="margin-top:4px">${list.length} use case${list.length===1?"":"s"}${L.kind==="Domain"?"":` in ${doms} domain${doms===1?"":"s"}`}, most common first. Click one to open it.</p>
+   <ul class="minilist" id="ml"></ul>
+   ${L.kind==="Domain"?`<h4>Also connected from other domains</h4><p class="note" style="margin-top:0">Use cases that live elsewhere but also belong here. They stay visible on the map, joined by dashed lines.</p><ul class="minilist" id="ml2"></ul>`:""}
+   <p class="path-note"><button type="button" id="clearLegend">Show everything</button></p>`);
+  if(L.kind==="Domain"){
+    const rel=cases.filter(related).sort((a,b)=>b.f-a.f||a.n.localeCompare(b.n));
+    panel.select("#ml2").selectAll("li").data(rel).join("li").html(d=>`${d.n}<span>${CL[d.c].n}</span>`).on("click",(e,d)=>select(d.id));
+    if(!rel.length) panel.select("#ml2").html('<li style="cursor:default">None</li>');
+  }
+  panel.select("#ml").selectAll("li").data(list).join("li").html(d=>`${d.n}<span>${L.side(d)}</span>`).on("click",(e,d)=>select(d.id));
+  panel.select("#toGuide").on("click",panelDefault);
+  panel.select("#clearLegend").on("click",()=>{st.legend=null; render(); panelDefault();});
+}
+function panelDefault(){
+  clearSel(); document.getElementById("panel").scrollTop=0;
+  panel.html(`<p class="crumb">Start here</p>
+  <h3>How the map works</h3>
+  <ul class="howto">
+    <li>The <b>centre</b> (gold ring) branches into <b>12 domains</b> (filled squares): the human need behind each use.</li>
+    <li>Each domain splits into <b>sub-domains</b> (empty squares): 43 kinds of activity, such as Tutoring &amp; study or Death &amp; memory.</li>
+    <li>Each <b>dot</b> is one <b>use case</b>, 142 in all. Its colour is its domain; bigger dots are more common.</li>
+    <li><b>Dashed lines</b> show a use that also belongs to another domain.</li>
+  </ul>
+  <h4>Why a use case can belong to several domains</h4>
+  <p style="font-size:14px;line-height:1.5">Real uses rarely serve just one need. <b>Appealing a health insurance denial</b> is everyday paperwork, so its dot sits in Navigate Daily Life. But it is also about health, and about standing up to a powerful institution, so it connects to Body &amp; Health and to Protect &amp; Govern.</p>
+  <p style="font-size:14px;line-height:1.5">Each dot sits in its main domain; the lines show the others. Open a use case to see every domain it belongs to. Focus on a domain to see the use cases from elsewhere that also belong to it.</p>
+  <h4>What you can click</h4>
+  <ul class="howto">
+    <li>A <b>dot</b>, to see the problem it solves, the purpose and how AI helps.</li>
+    <li>A <b>filled square</b> or its name, to show only that domain. Click it again to show all.</li>
+    <li>An <b>empty square</b> or its name, to list the use cases in that sub-domain.</li>
+    <li>An entry in the <b>legend</b> on the left, to show only those uses.</li>
+  </ul>
+  <h4>The filters on the left</h4>
+  <ul class="howto">
+    <li><b>Search</b> finds any word in a use case, its purpose, field or problem. Matches stay bold; the rest fade.</li>
+    <li><b>Hide the ordinary</b> fades out uses below the originality level you pick, from 1 (mainstream) to 5 (highly original).</li>
+    <li><b>Colour use-case dots by</b> recolours the dots: by <b>domain</b>, by the <b>AI role</b> (the job AI does), by the <b>problem</b> it solves, or by <b>originality</b>.</li>
+    <li>The <b>legend</b> below it changes with your choice. Click any entry to show only those uses; click again to show all.</li>
+    <li><b>Reset the map</b> clears every filter.</li>
+  </ul>
+  <h4>Start from what interests you</h4>
+  <div class="paths" id="paths"></div>
+  <p class="path-note" id="pathNote"></p>`);
+  panel.select("#paths").selectAll("button").data(PATHS).join("button").attr("type","button")
+    .html(d=>`<b>${d[2].legend?`<i style="background:${clusterColor(d[2].legend)}"></i>`:""}${d[0]}</b><span>${d[1]}</span>`)
+    .on("click",(e,d)=>applyPath(PATHS.indexOf(d)));
+}
+function panelSub(k,sk){
+  const list=cases.filter(x=>x.c===k&&x.s===sk);
+  panel.html(`<button class="back" type="button" id="toGuide">Back to the guide</button><div class="crumb">${CL[k].n}</div><h3>${SUBN[k+"/"+sk]}</h3><ul class="minilist" id="ml"></ul>`);
+  panel.select("#toGuide").on("click",panelDefault);
+  panel.select("#ml").selectAll("li").data(list).join("li").html(d=>`${d.n}<span>${ROLES[d.r]}</span>`).on("click",(e,d)=>select(d.id));
+}
+function select(id){
+  document.getElementById("panel").scrollTop=0;
+  st.sel=id; const c=cases[id];
+  const bar=(l,v)=>`<div class="bar"><span style="width:92px">${l}</span><span class="t"><i style="width:${v*20}%"></i></span><b>${v}/5</b></div>`;
+  const xs=c.x.map(k=>`<span class="chip" style="background:${clusterColor(k)}2e;color:${d3.color(clusterColor(k)).darker(1.4)}">${CL[k].n}</span>`).join("");
+  const src=c.src?`<p class="note">Evidence: <a href="${SOURCES[c.src][1]}" target="_blank" rel="noopener">${SOURCES[c.src][0]}</a></p>`:`<p class="note">Widely reported pattern; no single source.</p>`;
+  const sameRole=cases.filter(x=>x.r===c.r&&x.c!==c.c).slice(0,6);
+  panel.html(`<button class="back" type="button" id="toGuide">${st.legend?`Back to ${legendInfo().name}`:"Back to the guide"}</button><div class="crumb"><span style="color:${clusterColor(c.c)}">●</span> ${CL[c.c].n} › ${SUBN[c.c+"/"+c.s]}</div>
+   <h3>${c.n}</h3>
+   <div class="chips"><span class="chip">${c.d}</span><span class="chip">${MODES[c.m]}</span></div>
+   <h4>Problem</h4><p>${PROBLEMS[c.p]}</p>
+   <h4>Purpose</h4><p>${c.pur}</p>
+   <h4>How AI is used</h4><p><b>${ROLES[c.r]}.</b> ${c.how}</p>
+   ${bar("How common",c.f)}${bar("How original",c.w)}
+   ${c.x.length?`<h4>Also belongs to</h4><div class="chips">${xs}</div>`:""}
+   ${src}
+   <h4>Same AI role, elsewhere</h4><ul class="minilist" id="ml"></ul>`);
+  panel.select("#toGuide").on("click",()=>{clearSel(); st.legend?panelLegend():panelDefault();});
+  panel.select("#ml").selectAll("li").data(sameRole).join("li").html(d=>`${d.n}<span>${CL[d.c].n}</span>`).on("click",(e,d)=>select(d.id));
+  gn.selectAll("g.node").classed("sel",d=>d.data.type==="l"&&d.data.d.id===id);
+  hot(id,true);
+}
+
+/* controls */
+d3.selectAll("#colorBy button").on("click",function(){d3.selectAll("#colorBy button").classed("on",false);d3.select(this).classed("on",true);st.colorBy=this.dataset.k;st.legend=null;render();if(st.sel===null) panelDefault();});
+d3.select("#wmin").on("input",function(){st.wmin=+this.value;d3.select("#wminv").text(this.value);render(); if(st.legend&&st.sel===null) panelLegend();});
+d3.select("#q").on("input",function(){st.q=this.value.trim();render();});
+d3.select("#reset").on("click",()=>{Object.assign(st,{colorBy:"cluster",sizeBy:"f",wmin:1,xl:true,lbl:true,q:"",legend:null});st.collapsed.clear();
+  document.getElementById("q").value="";document.getElementById("wmin").value=1;d3.select("#wminv").text(1);
+  d3.selectAll("#colorBy button").classed("on",function(){return this.dataset.k==="cluster"});
+  panelDefault();render();fit();});
+
+render(); panelDefault(); requestAnimationFrame(fit);
+addEventListener("resize",fit);
+
+/* ============ CATALOG ============ */
+const sortSt={k:"c",dir:1};
+function opt(sel,label,obj){d3.select(sel).selectAll("option").data([["",label],...obj]).join("option").attr("value",d=>d[0]).text(d=>d[1]);}
+opt("#cc","All domains",CLUSTERS.map(c=>[c.k,c.n]));opt("#cr","All AI roles",roleKeys.map(k=>[k,ROLES[k]]));opt("#cp","All problems",probKeys.map(k=>[k,PROBLEMS[k]]));
+function drawTable(){
+  const q=document.getElementById("cq").value.toLowerCase(), fc=document.getElementById("cc").value, fr=document.getElementById("cr").value, fp=document.getElementById("cp").value;
+  let rows=cases.filter(c=>(!fc||c.c===fc)&&(!fr||c.r===fr)&&(!fp||c.p===fp)&&(!q||(c.n+" "+c.d+" "+c.pur+" "+c.how).toLowerCase().includes(q)));
+  const key={n:c=>c.n,c:c=>CL[c.c].i*100+c.id/1000,d:c=>c.d,p:c=>PROBLEMS[c.p],r:c=>ROLES[c.r],f:c=>c.f,w:c=>c.w}[sortSt.k];
+  rows.sort((a,b)=>d3.ascending(key(a),key(b))*sortSt.dir);
+  const cols=[["n","Use case"],["c","Domain"],["d","Field"],["p","Problem"],["r","AI role"],["how","How AI is used"],["f","Common"],["w","Original"]];
+  const t=d3.select("#tbl"); t.html("");
+  t.append("thead").append("tr").selectAll("th").data(cols).join("th").text(d=>d[1]+(sortSt.k===d[0]?(sortSt.dir>0?" ↑":" ↓"):"")).on("click",(e,d)=>{if(d[0]==="how")return;sortSt.dir=sortSt.k===d[0]?-sortSt.dir:1;sortSt.k=d[0];drawTable();});
+  const tr=t.append("tbody").selectAll("tr").data(rows).join("tr").attr("class","r").on("click",(e,d)=>{showView("map");select(d.id)});
+  tr.html(d=>`<td><b>${d.n}</b><br><span style="color:var(--muted);font-size:12px">${d.pur}</span></td><td><span class="dot" style="background:${clusterColor(d.c)}"></span>${CL[d.c].n}<br><span style="color:var(--faint);font-size:12px">${SUBN[d.c+"/"+d.s]}</span></td><td>${d.d}</td><td>${PROBLEMS[d.p]}</td><td>${ROLES[d.r]}</td><td style="max-width:280px">${d.how}</td><td>${d.f}</td><td>${d.w}</td>`);
+}
+["#cq","#cc","#cr","#cp"].forEach(s=>d3.select(s).on("input",drawTable));
+drawTable();
+
+/* sources */
+d3.select("#srclist").selectAll("li").data(Object.values(SOURCES)).join("li").html(d=>`<a href="${d[1]}" target="_blank" rel="noopener">${d[0]}</a>`);
+</script>
+</body>
+</html>
